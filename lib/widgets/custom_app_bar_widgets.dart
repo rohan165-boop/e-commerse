@@ -13,7 +13,18 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0,
       centerTitle: true,
       title: Container(
-        color: Colors.black,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.cyan.shade100,
+              Colors.cyan.shade200,
+              Colors.cyan.shade300,
+              Colors.cyan.shade400,
+              Colors.cyan.shade500,
+            ]
+          ),
+          borderRadius: BorderRadius.circular(100)
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Text(
           title,
@@ -21,7 +32,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
-      iconTheme: const IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.red.shade400),
       actions: [
         IconButton(
           onPressed: () {
