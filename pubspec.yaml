@@ -63,8 +63,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/ticket/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -79,22 +79,42 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: OpenSans
+    - family: SF Pro Display
       fonts:
-        - asset: fonts/Open-Sans/OpenSans-Regular.ttf
-        - asset: fonts/Open-Sans/OpenSans-Light.ttf
+        - asset: assets/fonts/SF-Pro-Display-Ultralight.otf
+          weight: 100
+        - asset: assets/fonts/SF-Pro-Display-Thin.otf
+          weight: 200
+        - asset: assets/fonts/SF-Pro-Display-Light.otf
           weight: 300
-        - asset: fonts/Open-Sans/OpenSans-Bold.ttf
-          weight: 700
-        - asset: fonts/Open-Sans/OpenSans-Semibold.ttf
+        - asset: assets/fonts/SF-Pro-Display-Regular.otf
+          weight: 400
+        - asset: assets/fonts/SF-Pro-Display-Medium.otf
+          weight: 500
+        - asset: assets/fonts/SF-Pro-Display-Semibold.otf
           weight: 600
-        - asset: fonts/Open-Sans/OpenSans-ExtraBold.ttf
+        - asset: assets/fonts/SF-Pro-Display-Bold.otf
+          weight: 700
+        - asset: assets/fonts/SF-Pro-Display-Heavy.otf
           weight: 800
-    - family: DMSerifDisplay
-      fonts:
-        - asset: fonts/DM-Serif-Display/DMSerifDisplay-Regular.ttf
-        - asset: fonts/DM-Serif-Display/DMSerifDisplay-Italic.ttf
-          style: italic
+        - asset: assets/fonts/SF-Pro-Display-Black.otf
+          weight: 900
+  #   - family: OpenSans
+  #     fonts:
+  #       - asset: fonts/Open-Sans/OpenSans-Regular.ttf
+  #       - asset: fonts/Open-Sans/OpenSans-Light.ttf
+  #         weight: 300
+  #       - asset: fonts/Open-Sans/OpenSans-Bold.ttf
+  #         weight: 700
+  #       - asset: fonts/Open-Sans/OpenSans-Semibold.ttf
+  #         weight: 600
+  #       - asset: fonts/Open-Sans/OpenSans-ExtraBold.ttf
+  #         weight: 800
+  #   - family: DMSerifDisplay
+  #     fonts:
+  #       - asset: fonts/DM-Serif-Display/DMSerifDisplay-Regular.ttf
+  #       - asset: fonts/DM-Serif-Display/DMSerifDisplay-Italic.ttf
+  #         style: italic
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

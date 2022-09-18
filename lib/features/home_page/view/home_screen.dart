@@ -1,3 +1,4 @@
+import 'package:ecommerse/constants/image_constants.dart';
 import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -11,6 +12,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(
         title: "Zero To Unicorn",
+      ),
+
+      body: Center(
+        child: Image.asset(ImageConstants.efe, height: 200,),
       ),
     );
   }
