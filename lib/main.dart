@@ -3,6 +3,7 @@ import 'package:ecommerse/app/route_handler.dart';
 import 'package:ecommerse/custom_ticket_ui/ticket_homepage.dart';
 import 'package:ecommerse/pages/home.dart';
 import 'package:ecommerse/practice/demo.dart';
+import 'package:ecommerse/route_transition/firt_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,6 +31,20 @@ void main() {
 // }
 
 // Coustom UI MyApp
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData(fontFamily: 'SF Pro Display'),
+//       title: 'Buy Tickets',
+//       home: const CustomTicketHome(),
+//     );
+//   }
+// }
+
+// route transition
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -38,7 +53,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'SF Pro Display'),
       title: 'Buy Tickets',
-      home: const CustomTicketHome(),
+      home: const FirstPage(),
     );
   }
 }
