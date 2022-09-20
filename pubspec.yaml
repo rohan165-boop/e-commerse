@@ -102,6 +102,9 @@ flutter:
           weight: 800
         - asset: assets/fonts/SF-Pro-Display-Black.otf
           weight: 900
+    - family: NothingYouCouldDo
+      fonts:
+        - asset: assets/fonts/NothingYouCouldDo.ttf    
   #   - family: OpenSans
   #     fonts:
   #       - asset: fonts/Open-Sans/OpenSans-Regular.ttf
