@@ -1,6 +1,7 @@
 import 'package:ecommerse/app/route.dart';
 import 'package:ecommerse/app/route_handler.dart';
 import 'package:ecommerse/custom_ticket_ui/ticket_homepage.dart';
+import 'package:ecommerse/flight_survay/flight_survay.dart';
 import 'package:ecommerse/pages/home.dart';
 import 'package:ecommerse/practice/demo.dart';
 import 'package:ecommerse/route_transition/firt_page.dart';
@@ -61,6 +62,23 @@ void main() {
 // }
 
 // sy_expedition_travel
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         brightness: Brightness.dark,
+//         scaffoldBackgroundColor: mainBlack,
+//       ),
+//       home: const MainPage(),
+//     );
+//   }
+// }
+
+// Flight survay
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -68,11 +86,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: mainBlack,
-      ),
-      home: const MainPage(),
+      theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.dark),
+      home: const FlightsStepper(),
     );
   }
 }
