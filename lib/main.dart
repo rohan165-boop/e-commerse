@@ -1,18 +1,15 @@
-import 'package:ecommerse/app/route.dart';
-import 'package:ecommerse/app/route_handler.dart';
-import 'package:ecommerse/custom_ticket_ui/ticket_homepage.dart';
-import 'package:ecommerse/flight_survay/flight_survay.dart';
-import 'package:ecommerse/pages/home.dart';
-import 'package:ecommerse/practice/demo.dart';
-import 'package:ecommerse/route_transition/firt_page.dart';
-import 'package:ecommerse/sy_expedition_travel_challenge/main_page.dart';
-import 'package:ecommerse/sy_expedition_travel_challenge/styles.dart';
+// ignore_for_file: dead_code
+
+import 'package:ecommerse/drawer_3d/custom_drawer.dart';
+import 'package:ecommerse/drawer_3d/custom_drawer_gitar.dart';
+import 'package:ecommerse/drawer_3d/drawer_home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
+// for e-commerse app
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
 
@@ -79,15 +76,55 @@ void main() {
 // }
 
 // Flight survay
-class MyApp extends StatelessWidget {
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.dark),
+//       home: const FlightsStepper(),
+//     );
+//   }
+// }
+
+// 3d drawer
+class MyApp extends StatelessWidget implements PreferredSizeWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    bool flip = false;
+   AppBar appBar = flip
+        ? AppBar()
+        : AppBar(
+            leading: Builder(
+              builder: (context) {
+                return IconButton(
+                  icon:const Icon(Icons.menu),
+                  onPressed: () => CustomDrawer.of(context)!.open(),
+                );
+              },
+            ),
+            title: const Text('Hello Flutter Europe'),
+          );
+    Widget child = DrawerHome3D(appBar: appBar);
+    if (flip) {
+      child = CustomGuitarDrawer(child: child);
+    } else {
+      child = CustomDrawer(child: child);
+    }
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.dark),
-      home: const FlightsStepper(),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: child,
     );
   }
+  
+  @override
+  Size get preferredSize => const Size(double.infinity, 50.0);
 }
