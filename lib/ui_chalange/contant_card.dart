@@ -50,7 +50,7 @@ class _ContentCardState extends State<ContentCard> {
     );
   }
 
-  Widget _buildTabBar({ bool? showFirstOption}) {
+  Widget _buildTabBar() {
     return Stack(
       children: <Widget>[
         Positioned.fill(

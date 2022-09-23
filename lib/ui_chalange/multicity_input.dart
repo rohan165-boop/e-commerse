@@ -37,7 +37,7 @@ class MulticityInputState extends State<MulticityInput>
             Padding(
               padding: const EdgeInsets.fromLTRB(0.0, 0.0, 64.0, 8.0),
               child: TypeableTextFormField(
-                finalText: "Kochfurt",
+                finalText: "Brt",
                 animation: _buildInputAnimation(begin: 0.0,end: 0.2),
                 decoration: const InputDecoration(
                   icon: Icon(Icons.flight_takeoff, color: Colors.red),
@@ -49,7 +49,7 @@ class MulticityInputState extends State<MulticityInput>
               padding: const EdgeInsets.fromLTRB(0.0, 0.0, 64.0, 8.0),
               child: TypeableTextFormField(
                 animation: _buildInputAnimation(begin: 0.15,end: 0.35),
-                finalText: "Lake Xanderland",
+                finalText: "Ktm",
                 decoration: const InputDecoration(
                   icon: Icon(Icons.flight_land, color: Colors.red),
                   labelText: "To",
@@ -63,7 +63,7 @@ class MulticityInputState extends State<MulticityInput>
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: TypeableTextFormField(
                       animation: _buildInputAnimation(begin: 0.3,end: 0.5),
-                      finalText: "South Darian",
+                      finalText: "Nepal",
                       decoration: const InputDecoration(
                         icon: Icon(Icons.flight_land, color: Colors.red),
                         labelText: "To",

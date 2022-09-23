@@ -2,8 +2,6 @@ import 'package:ecommerse/features/home_page/view/home_screen.dart';
 import 'package:ecommerse/features/profile_page/view/profile_screen.dart';
 import 'package:ecommerse/features/shop_page/view/shop_page_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class Home extends StatefulWidget {

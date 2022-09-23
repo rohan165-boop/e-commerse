@@ -1,8 +1,6 @@
 import 'package:ecommerse/route_transition/custom_page_route.dart';
 import 'package:ecommerse/route_transition/sec_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});

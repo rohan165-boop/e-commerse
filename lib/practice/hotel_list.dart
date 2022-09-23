@@ -35,7 +35,7 @@ class _HotelListViewState extends State<HotelList> with SingleTickerProviderStat
       opacity: _anim.value,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: Styles.hzScreenPadding * 1.5, vertical: 10),
-        child: Container(
+        child: SizedBox(
           width: 400,
           height: size.height * .25,
           child: Column(

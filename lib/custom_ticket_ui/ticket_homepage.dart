@@ -2,8 +2,6 @@ import 'package:ecommerse/custom_ticket_ui/exhibition_bottom_sheet.dart';
 import 'package:ecommerse/custom_ticket_ui/sliding_cards.dart';
 import 'package:ecommerse/custom_ticket_ui/tabs.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CustomTicketHome extends StatelessWidget {
   const CustomTicketHome({super.key});

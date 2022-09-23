@@ -1,10 +1,7 @@
 // ignore_for_file: dead_code
 
-import 'package:ecommerse/drawer_3d/custom_drawer.dart';
-import 'package:ecommerse/drawer_3d/custom_drawer_gitar.dart';
-import 'package:ecommerse/drawer_3d/drawer_home.dart';
-import 'package:ecommerse/flight_survay/flight_survay.dart';
-import 'package:ecommerse/ui_chalange/ui_home.dart';
+import 'package:ecommerse/app/route.dart';
+import 'package:ecommerse/app/route_handler.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,25 +9,25 @@ void main() {
 }
 
 // for e-commerse app
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return  MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "e-Commerse",
-//       navigatorKey: AppSettings.navigatorKey,
-//       onGenerateRoute: RouteHandler.generateRoute,
-//       initialRoute: AppRoute.homeRoute,
-//     // home: TravelCardDemo(),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "e-Commerse",
+      navigatorKey: AppSettings.navigatorKey,
+      onGenerateRoute: RouteHandler.generateRoute,
+      initialRoute: AppRoute.homeRoute,
+    // home: TravelCardDemo(),
+    );
+  }
+}
 
-// class AppSettings{
-//   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-// }
+class AppSettings{
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+}
 
 // Coustom UI MyApp
 // class MyApp extends StatelessWidget {
@@ -132,18 +129,18 @@ void main() {
 // }
 
 // ui chalange folder
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flight Search',
-      theme:  ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: const UIHomePage(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return  MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: 'Flight Search',
+//       theme:  ThemeData(
+//         primarySwatch: Colors.red,
+//       ),
+//       home: const UIHomePage(),
+//     );
+//   }
+// }

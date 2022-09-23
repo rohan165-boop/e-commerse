@@ -87,8 +87,8 @@ class FlightStopCardState extends State<FlightStopCard>
   }
 
   double get maxWidth {
-    RenderBox renderBox = context.findRenderObject() as RenderBox;
-    BoxConstraints constraints = renderBox.constraints;
+    RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+    BoxConstraints constraints = renderBox!.constraints;
     double maxWidth = constraints.maxWidth;
     return maxWidth;
   }
@@ -128,7 +128,7 @@ class FlightStopCardState extends State<FlightStopCard>
     return Positioned(
       left: getMarginLeft(animationValue),
       child: Text(
-        "${widget.flightStop.date}",
+        widget.flightStop.date,
         style: TextStyle(
           fontSize: 14.0 * animationValue,
           color: Colors.grey,
@@ -142,7 +142,7 @@ class FlightStopCardState extends State<FlightStopCard>
     return Positioned(
       right: getMarginRight(animationValue),
       child: Text(
-        "${widget.flightStop.price}",
+        widget.flightStop.price,
         style: TextStyle(
             fontSize: 16.0* animationValue, color: Colors.black, fontWeight: FontWeight.bold,),
       ),
@@ -155,7 +155,7 @@ class FlightStopCardState extends State<FlightStopCard>
       left: getMarginLeft(animationValue),
       bottom: getMarginBottom(animationValue),
       child: Text(
-        "${widget.flightStop.fromToTime}",
+        widget.flightStop.fromToTime,
         style: TextStyle(
             fontSize: 12.0* animationValue, color: Colors.grey, fontWeight: FontWeight.w500,),
       ),

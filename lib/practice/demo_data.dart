@@ -31,7 +31,7 @@ class DemoData {
         name: 'Pisa',
         title: 'Pisa, Italy',
         description: 'Discover a beautiful city where ancient and modern meet',
-        color: Color(0xffdee5cf),
+        color: const Color(0xffdee5cf),
         hotels: [
           Hotel('Hotel Bologna', reviews: 201, price: 120),
           Hotel('Tree House', reviews: 85, price: 98),
@@ -41,7 +41,7 @@ class DemoData {
         name: 'Budapest',
         title: 'Budapest, Hungary',
         description: 'Meet the city with rich history and indescribable culture',
-        color: Color(0xffdaf3f7),
+        color: const Color(0xffdaf3f7),
         hotels: [
           Hotel('Hotel Estilo Budapest', reviews: 762, price: 87),
           Hotel('Danubius Hotel', reviews: 3122, price: 196),
@@ -51,7 +51,7 @@ class DemoData {
         name: 'London',
         title: 'London, England',
         description: 'A diverse and exciting city with the world’s best sights and attractions!',
-        color: Color(0xfff9d9e2),
+        color: const Color(0xfff9d9e2),
         hotels: [
           Hotel('InterContinental London Hotel', reviews: 1624, price: 418),
           Hotel('Brick Lane Hotel', reviews: 101, price: 101),
