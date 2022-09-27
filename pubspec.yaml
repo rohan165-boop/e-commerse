@@ -40,6 +40,7 @@ dependencies:
   vector_math: ^2.1.2
   envify: ^2.0.2
   provider: ^6.0.3
+  audioplayers: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,7 @@ flutter:
     - assets/ticket/
     - assets/sytravel/
     - assets/drawer3d/
+    - assets/pino/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

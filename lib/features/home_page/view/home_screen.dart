@@ -1,5 +1,6 @@
 import 'package:ecommerse/custom_ticket_ui/ticket_homepage.dart';
 import 'package:ecommerse/flight_survay/flight_survay.dart';
+import 'package:ecommerse/piano_tile/piano_home.dart';
 import 'package:ecommerse/route_transition/firt_page.dart';
 import 'package:ecommerse/sy_expedition_travel_challenge/main_page.dart';
 import 'package:ecommerse/ui_chalange/ui_home.dart';
@@ -53,6 +54,13 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const UIHomePage()));
+                }),
+                CupertinoButton(
+                color: Colors.cyan,
+                child: const Text("Piano"),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const PinoHomeScreen()));
                 }),
           ],
         ));
