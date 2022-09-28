@@ -4,6 +4,7 @@ import 'package:ecommerse/piano_tile/piano_home.dart';
 import 'package:ecommerse/route_transition/firt_page.dart';
 import 'package:ecommerse/sy_expedition_travel_challenge/main_page.dart';
 import 'package:ecommerse/ui_chalange/ui_home.dart';
+import 'package:ecommerse/weather/ui/weather_home.dart';
 import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -55,12 +56,25 @@ class HomeScreen extends StatelessWidget {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const UIHomePage()));
                 }),
-                CupertinoButton(
+            CupertinoButton(
                 color: Colors.cyan,
                 child: const Text("Piano"),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const PinoHomeScreen()));
+                }),
+            CupertinoButton(
+                color: Colors.cyan,
+                child: const Text("Weather"),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        LayoutBuilder(builder: (context, constraints) {
+                      // Use a LayoutBuilder to retrieve the current maxWidth of the screen
+                      // HomePage will use it to keep things responsive
+                      return WeatherHomeScreen(width: constraints.maxWidth);
+                    }),
+                  ));
                 }),
           ],
         ));

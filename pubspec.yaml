@@ -41,6 +41,7 @@ dependencies:
   envify: ^2.0.2
   provider: ^6.0.3
   audioplayers: ^1.1.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,7 @@ flutter:
     - assets/sytravel/
     - assets/drawer3d/
     - assets/pino/
+    - assets/icons/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
