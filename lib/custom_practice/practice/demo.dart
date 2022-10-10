@@ -27,7 +27,7 @@ class _TravelCardDemoState extends State<TravelCardDemo> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: _buildAppBar(),
       body: Container(

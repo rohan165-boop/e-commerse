@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class RouteHandler{
   static Route<dynamic> generateRoute(RouteSettings settings){
 
-    var arguments = settings.arguments;
+    // var arguments = settings.arguments;
 
     switch(settings.name) {
       case AppRoute.homeRoute:

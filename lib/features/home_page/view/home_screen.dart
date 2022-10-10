@@ -1,91 +1,70 @@
-import 'package:ecommerse/custom_practice/custom_ticket_ui/ticket_homepage.dart';
-import 'package:ecommerse/custom_practice/flight_survay/flight_survay.dart';
-import 'package:ecommerse/custom_practice/piano_tile/piano_home.dart';
-import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
-import 'package:ecommerse/custom_practice/snake_game.dart/game.dart';
-import 'package:ecommerse/custom_practice/sy_expedition_travel_challenge/main_page.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/ui_home.dart';
-import 'package:ecommerse/custom_practice/weather/ui/weather_home.dart';
 import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const CustomAppBar(
-          title: "Zero To Unicorn",
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            CupertinoButton(
-                color: Colors.cyan,
-                child: const Text("Custom Ticket"),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const CustomTicketHome()));
-                }),
-            CupertinoButton(
-                color: Colors.cyan,
-                child: const Text("Route Transition"),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const FirstPage()));
-                }),
-            CupertinoButton(
-                color: Colors.cyan,
-                child: const Text("Sy_travel"),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const MainPage()));
-                }),
-            CupertinoButton(
-                color: Colors.cyan,
-                child: const Text("Flight Survay"),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const FlightsStepper()));
-                }),
-            CupertinoButton(
-                color: Colors.cyan,
-                child: const Text("Ui Chalange"),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const UIHomePage()));
-                }),
-            CupertinoButton(
-                color: Colors.cyan,
-                child: const Text("Piano"),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const PinoHomeScreen()));
-                }),
-            CupertinoButton(
-                color: Colors.cyan,
-                child: const Text("Weather"),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) =>
-                        LayoutBuilder(builder: (context, constraints) {
-                      // Use a LayoutBuilder to retrieve the current maxWidth of the screen
-                      // HomePage will use it to keep things responsive
-                      return WeatherHomeScreen(width: constraints.maxWidth);
-                    }),
-                  ));
-                }),
 
-                CupertinoButton(
-                color: Colors.cyan,
-                child: const Text("Snack Game"),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const GamePage()));
-                }),
-          ],
-        ));
+    return Scaffold(
+      appBar: const CustomAppBar(
+        title: "Zero To Unicorn",
+      ),
+      body: ClipPath(
+        clipper: MyClipper(),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          height: MediaQuery.of(context).size.height / 4,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                Color(0xFF3383CD),
+                Color(0xFF11249F),
+              ],
+            ),
+          ),
+        ),
+
+      ),
+      // Column(
+      //   children: [
+      //     SizedBox(
+      //     child: CarouselSlider(
+      //   options: CarouselOptions(
+      //     aspectRatio: 1.5,
+      //     viewportFraction: 0.9,
+      //     enlargeStrategy: CenterPageEnlargeStrategy.height,
+      //     enlargeCenterPage: true,
+      //     scrollDirection: Axis.horizontal,
+      //     // autoPlay: true,
+      //   ),
+      //   items: Category.categories.map((e) => HeroCarouselCaed(category: e,)).toList(),
+      // )),
+      //   ],
+      // ),
+    );
+  }
+}
+
+class MyClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0, size.height);
+    path.quadraticBezierTo(
+        size.width / 3, size.height / 3, size.width , size.height / 5);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
   }
 }
