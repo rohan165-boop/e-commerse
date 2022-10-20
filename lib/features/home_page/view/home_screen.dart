@@ -6,41 +6,50 @@ import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
         title: "Zero To Unicorn",
       ),
-      body: Center(
-        child: ClipPath(
-          clipper: MyClipper(),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            height: MediaQuery.of(context).size.height / 4,
-            width: 200,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [
-                  Color(0xFF3383CD),
-                  Color(0xFF11249F),
-                ],
+      body: Column(
+        children: [
+          ElevatedButton(onPressed: () {
+            _showDialog(context);
+          }, child: const Text("allert")),
+          Center(
+            child: ClipPath(
+              clipper: MyClipper(),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                height: MediaQuery.of(context).size.height / 4,
+                width: 300,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color(0xFF3383CD),
+                      Color(0xFF11249F),
+                    ],
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 2,
+                      width: 200,
+                      color: Colors.red,
+                    )
+                  ],
+                ),
               ),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 2,
-                  width: 200,
-                  color: Colors.red,
-                )
-              ],
-            ),
           ),
-        ),
+        ],
       ),
       // Column(
       //   children: [
@@ -62,6 +71,33 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+ void _showDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: ClipPath(
+          clipper: MyClipper(),
+          child: Container(
+            height: 100,
+            width: 200,
+            color: Colors.red,
+            child: const Text("Alert!!")),
+        ),
+        content: const Text("You are awesome!"),
+        actions: <Widget>[
+          ElevatedButton(
+            child: const Text("OK"),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
 class MyClipper extends CustomClipper<Path> {
   
 
@@ -76,12 +112,12 @@ class MyClipper extends CustomClipper<Path> {
 
         Path path = Path();
 
-    path.lineTo(0.0, size.height);
-    path.lineTo(size.width, size.height);
-    path.lineTo(size.width, 0.0);
+    path.lineTo(0.0, size.height );
+    path.lineTo(size.width , size.height  );
+    path.lineTo(size.width , 0.0);
 
     path.addOval(Rect.fromCircle(
-        center: Offset(0.0, size.height / 2), radius: 20.0));
+        center: Offset(size.width/2, 0), radius: 50.0));
     path.addOval(Rect.fromCircle(
         center: Offset(size.width, size.height / 2), radius: 20.0));
 
@@ -89,23 +125,21 @@ class MyClipper extends CustomClipper<Path> {
 
     //  final path = Path()
     //   ..moveTo(0, 0)
-    //   ..lineTo(size.width - right - holeRadius, 0.0)
+    //   ..lineTo(size.width  - holeRadius, 0.0)
     //   ..arcToPoint(
     //     Offset(size.width - right, 0),
     //     clockwise: false,
-    //     radius: const Radius.circular(5),
+    //     radius: const Radius.circular(10),
     //   )
     //   ..lineTo(size.width, 0.0)
-    //   ..lineTo(size.width, size.height)
+    //   ..lineTo(size.width , size.height )
     //   ..lineTo(size.width - right, size.height)
     //   ..arcToPoint(
-    //     Offset(size.width - right - holeRadius, size.height),
-    //     clockwise: false,
+    //     Offset(size.width - holeRadius, size.height),
+    //     clockwise: true,
     //     radius: const Radius.circular(5),
     //   );
-
     //   path.lineTo(0.0, size.height);
-
     // path.close();
     // return path;
 
