@@ -6,8 +6,6 @@ import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,9 +14,11 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ElevatedButton(onPressed: () {
-            _showDialog(context);
-          }, child: const Text("allert")),
+          ElevatedButton(
+              onPressed: () {
+                _showDialog(context);
+              },
+              child: const Text("allert")),
           Center(
             child: ClipPath(
               clipper: MyClipper(),
@@ -71,36 +71,91 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
- void _showDialog(BuildContext context) {
+void _showDialog(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: ClipPath(
-          clipper: MyClipper(),
-          child: Container(
-            height: 100,
-            width: 200,
-            color: Colors.red,
-            child: const Text("Alert!!")),
+        backgroundColor: Colors.transparent,
+        titlePadding: const EdgeInsets.all(0.0),
+        title: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 25),
+              child: ClipPath(
+                clipper: MyClipper(),
+                child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.white,
+                    ),
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        const Text("Alert Dialog Box"),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text("Content writing services"),
+                        const SizedBox(
+                          height: 50,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ElevatedButton(
+                              child: const Text("Cancle"),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            ElevatedButton(
+                              child: const Text("Submit"),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    )),
+              ),
+            ),
+            Positioned(
+              left: 115,
+              bottom: 174,
+              child: Container(
+                height: 50,
+                width: 50,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.green),
+              ),
+            ),
+          ],
         ),
-        content: const Text("You are awesome!"),
-        actions: <Widget>[
-          ElevatedButton(
-            child: const Text("OK"),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
+        // content:  Container(
+        //   padding: const EdgeInsets.all(20),
+        //   height: 100,
+        //   width: double.infinity,
+        //   child: const Text("You are awesome!")),
+        // actions: <Widget>[
+        //   ElevatedButton(
+        //     child: const Text("OK"),
+        //     onPressed: () {
+        //       Navigator.of(context).pop();
+        //     },
+        //   ),
+        // ],
       );
     },
   );
 }
 
 class MyClipper extends CustomClipper<Path> {
-  
-
   // final double right;
   // final double holeRadius;
   // MyClipper({
@@ -109,17 +164,16 @@ class MyClipper extends CustomClipper<Path> {
   // });
   @override
   Path getClip(Size size) {
+    Path path = Path();
 
-        Path path = Path();
+    path.lineTo(0.0, size.height);
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width, 0.0);
 
-    path.lineTo(0.0, size.height );
-    path.lineTo(size.width , size.height  );
-    path.lineTo(size.width , 0.0);
-
+    path.addOval(
+        Rect.fromCircle(center: Offset(size.width / 2, 0), radius: 29.0));
     path.addOval(Rect.fromCircle(
-        center: Offset(size.width/2, 0), radius: 50.0));
-    path.addOval(Rect.fromCircle(
-        center: Offset(size.width, size.height / 2), radius: 20.0));
+        center: Offset(size.width, size.height / 2), radius: 0.0));
 
     return path;
 
@@ -150,7 +204,6 @@ class MyClipper extends CustomClipper<Path> {
     // path.lineTo(size.width, 0);
     // path.close();
     // return path;
-
 
     // Path path = Path();
     // path.lineTo(0, size.height);
