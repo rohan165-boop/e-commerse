@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:ecommerse/features/home_page/widget/animated_container.dart';
+import 'package:ecommerse/widgets/drag_ui.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
@@ -43,12 +45,28 @@ class HomeScreen extends StatelessWidget {
                       height: 2,
                       width: 200,
                       color: Colors.red,
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
           ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AnimatedConatinerScreen()));
+              },
+              child: const Text("Animation")),
+              ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ExampleDragAndDrop()));
+              },
+              child: const Text("Drag Ui")),
         ],
       ),
       // Column(
