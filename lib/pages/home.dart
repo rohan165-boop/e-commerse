@@ -1,6 +1,6 @@
 import 'package:ecommerse/features/home_page/view/home_screen.dart';
 import 'package:ecommerse/features/profile_page/view/profile_screen.dart';
-import 'package:ecommerse/features/shop_page/view/shop_page_screen.dart';
+import 'package:ecommerse/features/apps_practice/view/app_practice.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -53,8 +53,8 @@ class _HomeState extends State<Home> {
                   text: 'Home',
                 ),
                 GButton(
-                  icon: Icons.shopping_cart,
-                  text: 'Shop',
+                  icon: Icons.app_registration,
+                  text: 'Practice',
                 ),
                 GButton(
                   icon: Icons.person,
