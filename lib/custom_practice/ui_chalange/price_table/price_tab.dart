@@ -39,7 +39,7 @@ class _PriceTabState extends State<PriceTab> with TickerProviderStateMixin {
   late AnimationController _fabAnimationController;
   late Animation _planeSizeAnimation;
   late Animation _planeTravelAnimation;
-  late Animation _fabAnimation;
+  late Animation<double> _fabAnimation;
 
   final List<Animation<dynamic>> _dotPositions = [];
 
@@ -142,10 +142,10 @@ class _PriceTabState extends State<PriceTab> with TickerProviderStateMixin {
           ),
         ],
       ),
-      builder: (context,  child) => Positioned(
-            top: _planeTopPadding,
-            child: child!,
-          ),
+      builder: (context, child) => Positioned(
+        top: _planeTopPadding,
+        child: child!,
+      ),
     );
   }
 
@@ -155,8 +155,7 @@ class _PriceTabState extends State<PriceTab> with TickerProviderStateMixin {
       child: ScaleTransition(
         scale: _fabAnimation,
         child: FloatingActionButton(
-          onPressed: () => Navigator
-              .of(context)
+          onPressed: () => Navigator.of(context)
               .push(FadeRoute(builder: (context) => const TicketsPage())),
           child: const Icon(Icons.check, size: 36.0),
         ),
@@ -198,13 +197,9 @@ class _PriceTabState extends State<PriceTab> with TickerProviderStateMixin {
   }
 
   void _initDotAnimations() {
-    //what part of whole animation takes one dot travel
     const double slideDurationInterval = 0.4;
-    //what are delays between dot animations
     const double slideDelayInterval = 0.2;
-    //at the bottom of the screen
     double? startingMarginTop = widget.height;
-    //minimal margin from the top (where first dot will be placed)
     double minMarginTop =
         _minPlanePaddingTop + _planeSize + 0.5 * (0.8 * FlightStopCard.height);
 
@@ -247,16 +242,18 @@ class _PriceTabState extends State<PriceTab> with TickerProviderStateMixin {
   void _initFabAnimationController() {
     _fabAnimationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 300));
-    _fabAnimation = CurvedAnimation(
-        parent: _fabAnimationController, curve: Curves.easeOut);
+    _fabAnimation =
+        CurvedAnimation(parent: _fabAnimationController, curve: Curves.easeOut);
   }
 
   _animateFab() {
     _fabAnimationController.forward();
   }
+
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty<AnimationController>('_planeSizeAnimationController', _planeSizeAnimationController));
+    properties.add(DiagnosticsProperty<AnimationController>(
+        '_planeSizeAnimationController', _planeSizeAnimationController));
   }
 }

@@ -22,7 +22,7 @@ class _TicketsPageState extends State<TicketsPage>
   ];
   late AnimationController cardEntranceAnimationController;
   late List<Animation> ticketAnimations;
-  late Animation fabAnimation;
+  late Animation<double> fabAnimation;
 
   @override
   void initState() {
@@ -36,14 +36,13 @@ class _TicketsPageState extends State<TicketsPage>
       double start = index * 0.1;
       double duration = 0.6;
       double end = duration + start;
-      return Tween<double>(begin: 800.0, end: 0.0).animate(
-          CurvedAnimation(
-              parent: cardEntranceAnimationController,
-              curve: Interval(start, end, curve: Curves.decelerate)));
+      return Tween<double>(begin: 800.0, end: 0.0).animate(CurvedAnimation(
+          parent: cardEntranceAnimationController,
+          curve: Interval(start, end, curve: Curves.decelerate)));
     }).toList();
     fabAnimation = CurvedAnimation(
         parent: cardEntranceAnimationController,
-        curve:const Interval(0.7, 1.0, curve: Curves.decelerate));
+        curve: const Interval(0.7, 1.0, curve: Curves.decelerate));
     cardEntranceAnimationController.forward();
   }
 
@@ -86,9 +85,9 @@ class _TicketsPageState extends State<TicketsPage>
           child: TicketCard(stop: stop),
         ),
         builder: (context, child) => Transform.translate(
-              offset: Offset(0.0, ticketAnimations[index].value),
-              child: child,
-            ),
+          offset: Offset(0.0, ticketAnimations[index].value),
+          child: child,
+        ),
       );
     });
   }
@@ -98,7 +97,7 @@ class _TicketsPageState extends State<TicketsPage>
       scale: fabAnimation,
       child: FloatingActionButton(
         onPressed: () => Navigator.of(context).pop(),
-        child:const Icon(Icons.fingerprint),
+        child: const Icon(Icons.fingerprint),
       ),
     );
   }
