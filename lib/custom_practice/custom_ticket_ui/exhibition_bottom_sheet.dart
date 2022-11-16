@@ -263,8 +263,7 @@ class SheetHeader extends StatelessWidget {
   final double fontSize;
   final double topMargin;
 
-  const SheetHeader(
-      {Key? key, required this.fontSize, required this.topMargin})
+  const SheetHeader({Key? key, required this.fontSize, required this.topMargin})
       : super(key: key);
 
   @override

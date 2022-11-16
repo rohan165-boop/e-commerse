@@ -80,7 +80,8 @@ class SlidingCard extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(32)),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(32)),
               child: Image.asset(
                 'assets/ticket/$assetName',
                 height: MediaQuery.of(context).size.height * 0.3,
@@ -109,10 +110,7 @@ class CardContent extends StatelessWidget {
   final double offset;
 
   const CardContent(
-      {Key? key,
-      required this.name,
-      required this.date,
-      required this.offset})
+      {Key? key, required this.name, required this.date, required this.offset})
       : super(key: key);
 
   @override
