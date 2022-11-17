@@ -28,9 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: "Zero To Unicorn",
-      ),
       body: NotificationListener(
         onNotification: (notif) {
           if (notif is ScrollUpdateNotification) {
@@ -114,6 +111,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     alignment: Alignment.center,
                     child: const Text(
                       "Paralax Effect",
+                      style: TextStyle(
+                          color: AppColors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                   )
                 ],

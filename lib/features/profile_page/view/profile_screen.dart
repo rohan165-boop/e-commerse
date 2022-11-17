@@ -1,5 +1,7 @@
+import 'dart:developer';
+
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/constants/image_constants.dart';
-import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,12 +14,20 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   late ScrollController _scrollController;
+  ValueNotifier<bool> isSunset = ValueNotifier(false);
 
   @override
   void initState() {
     _scrollController = ScrollController()
       ..addListener(() {
         _onScroll();
+      })
+      ..addListener(() {
+        if (_scrollController.position.pixels >= 1000) {
+          isSunset.value = true;
+        } else if (_scrollController.position.pixels <= 10) {
+          isSunset.value = false;
+        }
       });
     super.initState();
   }
@@ -31,19 +41,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   //layers speeds
-  double _layer1speed = 0.5;
-  double _layer2speed = 0.45;
-  double _layer3speed = 0.40;
-  double _layer4speed = 0.3;
+  final double _layer1speed = 0.5;
+  final double _layer2speed = 0.45;
+  final double _layer3speed = 0.42;
+  final double _layer4speed = 0.375;
+  final double _sunspeed = 0.25;
 
   @override
   Widget build(BuildContext context) {
     var screensize = MediaQuery.of(context).size;
     var layoutHeight = screensize.height * 3;
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: "Profile",
-      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -57,31 +65,61 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Stack(
           children: [
             Positioned(
-              bottom: _layer1speed * _scrolloffset,
+              bottom: (screensize.height * 0.18) + (_sunspeed * _scrolloffset),
+              left: 0,
+              right: 190,
+              child: SvgPicture.asset(SVGConstants.sun),
+            ),
+            Positioned(
+              bottom: _layer4speed * _scrolloffset,
               left: 0,
               right: 0,
               child: SvgPicture.asset(SVGConstants.mountainslayer4),
             ),
             Positioned(
-              bottom: 0,
+              bottom: _layer3speed * _scrolloffset,
               left: 0,
               right: 0,
               child: SvgPicture.asset(SVGConstants.mountainslayer2),
             ),
             Positioned(
-              bottom: -10,
+              bottom: -10 + _layer2speed * _scrolloffset,
               left: 0,
               right: 0,
               child: SvgPicture.asset(SVGConstants.treelayer),
             ),
             Positioned(
-              bottom: -60,
+              bottom: -60 + _layer1speed * _scrolloffset,
               left: 0,
               right: 0,
               child: SvgPicture.asset(SVGConstants.layer1),
             ),
+            Positioned(
+              top: (screensize.height - 62) +
+                  (_layer1speed * _scrolloffset * -1),
+              left: 0,
+              right: 0,
+              height: screensize.height,
+              child: Container(
+                color: AppColors.appBlack,
+                alignment: Alignment.topCenter,
+                child: ValueListenableBuilder<bool>(
+                    valueListenable: isSunset,
+                    builder: (context, value, _) {
+                      return Text(
+                        value ? "Parallax SunRise" : "Parallax Sunset",
+                        style: const TextStyle(
+                            color: AppColors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      );
+                    }),
+              ),
+            ),
+            // scroll view
             Positioned.fill(
               child: SingleChildScrollView(
+                reverse: false,
                 controller: _scrollController,
                 child: Container(
                   height: layoutHeight,
