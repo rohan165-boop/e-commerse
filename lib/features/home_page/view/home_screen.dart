@@ -1,260 +1,127 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:ecommerse/features/home_page/widget/animated_container.dart';
-import 'package:ecommerse/features/home_page/widget/p_r.dart';
-import 'package:ecommerse/widgets/drag_ui.dart';
+import 'package:ecommerse/constants/app_colors.dart';
+import 'package:ecommerse/constants/image_constants.dart';
+import 'package:ecommerse/features/home_page/view/widget/paralax_background.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  double topEleven = 0;
+  double topTen = 0;
+  double topNine = 0;
+  double topEight = 0;
+  double topSeven = 0;
+  double topSix = 0;
+  double topFive = 0;
+  double topFour = 0;
+  double topThree = 0;
+  double topTwo = 0;
+  double topOne = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
         title: "Zero To Unicorn",
       ),
-      body: Column(
-        children: [
-          ElevatedButton(
-              onPressed: () {
-                _showDialog(context);
-              },
-              child: const Text("allert")),
-          Center(
-            child: ClipPath(
-              clipper: MyClipper(),
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                height: MediaQuery.of(context).size.height / 4,
-                width: 300,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFF3383CD),
-                      Color(0xFF11249F),
-                    ],
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 2,
-                      width: 200,
-                      color: Colors.red,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AnimatedConatinerScreen()));
-              },
-              child: const Text("Animation")),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ExampleDragAndDrop()));
-              },
-              child: const Text("Drag Ui")),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const PR()));
-              },
-              child: const Text("PR")),
-        ],
-      ),
-      // Column(
-      //   children: [
-      //     SizedBox(
-      //     child: CarouselSlider(
-      //   options: CarouselOptions(
-      //     aspectRatio: 1.5,
-      //     viewportFraction: 0.9,
-      //     enlargeStrategy: CenterPageEnlargeStrategy.height,
-      //     enlargeCenterPage: true,
-      //     scrollDirection: Axis.horizontal,
-      //     // autoPlay: true,
-      //   ),
-      //   items: Category.categories.map((e) => HeroCarouselCaed(category: e,)).toList(),
-      // )),
-      //   ],
-      // ),
-    );
-  }
-}
-
-void _showDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        backgroundColor: Colors.transparent,
-        titlePadding: const EdgeInsets.all(0.0),
-        title: Stack(
+      body: NotificationListener(
+        onNotification: (notif) {
+          if (notif is ScrollUpdateNotification) {
+            if (notif.scrollDelta == null) return true;
+            setState(() {
+              topEleven -= notif.scrollDelta! / 2.0;
+              topTen -= notif.scrollDelta! / 1.9;
+              topNine -= notif.scrollDelta! / 1.8;
+              topEight -= notif.scrollDelta! / 1.7;
+              topSeven -= notif.scrollDelta! / 1.6;
+              topSix -= notif.scrollDelta! / 1.5;
+              topFive -= notif.scrollDelta! / 1.4;
+              topFour -= notif.scrollDelta! / 1.3;
+              topThree -= notif.scrollDelta! / 1.2;
+              topTwo -= notif.scrollDelta! / 1.2;
+              topOne -= notif.scrollDelta! / 1;
+            });
+          }
+          return true;
+        },
+        child: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 25),
-              child: ClipPath(
-                clipper: MyClipper(),
-                child: Container(
-                    height: 200,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      color: Colors.white,
+            const SizedBox(
+              height: 100,
+            ),
+
+            /// Paralax Background
+            ParalaxBackground(
+              top: topEleven,
+              asset: GardenImage.garden11,
+            ),
+            ParalaxBackground(
+              top: topTen,
+              asset: GardenImage.garden10,
+            ),
+            ParalaxBackground(
+              top: topNine,
+              asset: GardenImage.garden9,
+            ),
+            ParalaxBackground(
+              top: topEight,
+              asset: GardenImage.garden8,
+            ),
+            ParalaxBackground(
+              top: topSeven,
+              asset: GardenImage.garden7,
+            ),
+            ParalaxBackground(
+              top: topSix,
+              asset: GardenImage.garden6,
+            ),
+            ParalaxBackground(
+              top: topFive,
+              asset: GardenImage.garden5,
+            ),
+            ParalaxBackground(
+              top: topFour,
+              asset: GardenImage.garden4,
+            ),
+            ParalaxBackground(
+              top: topThree,
+              asset: GardenImage.garden3,
+            ),
+            ParalaxBackground(
+              top: topTwo,
+              asset: GardenImage.garden2,
+            ),
+            ParalaxBackground(
+              top: topOne,
+              asset: GardenImage.garden1,
+            ),
+            SingleChildScrollView(
+              physics: const ClampingScrollPhysics(),
+              child: Column(
+                children: [
+                  const SizedBox(height: 350),
+                  Container(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    color: AppColors.appBlack,
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "Paralax Effect",
                     ),
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        const Text("Alert Dialog Box"),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        const Text("Content writing services"),
-                        const SizedBox(
-                          height: 50,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            ElevatedButton(
-                              child: const Text("Cancle"),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                            ElevatedButton(
-                              child: const Text("Submit"),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                          ],
-                        )
-                      ],
-                    )),
+                  )
+                ],
               ),
-            ),
-            Positioned(
-              left: 115,
-              bottom: 174,
-              child: Container(
-                height: 50,
-                width: 50,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.green),
-              ),
-            ),
+            )
           ],
         ),
-        // content:  Container(
-        //   padding: const EdgeInsets.all(20),
-        //   height: 100,
-        //   width: double.infinity,
-        //   child: const Text("You are awesome!")),
-        // actions: <Widget>[
-        //   ElevatedButton(
-        //     child: const Text("OK"),
-        //     onPressed: () {
-        //       Navigator.of(context).pop();
-        //     },
-        //   ),
-        // ],
-      );
-    },
-  );
-}
-
-class MyClipper extends CustomClipper<Path> {
-  // final double right;
-  // final double holeRadius;
-  // MyClipper({
-  //   required this.right,
-  //   required this.holeRadius,
-  // });
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-
-    path.lineTo(0.0, size.height);
-    path.lineTo(size.width, size.height);
-    path.lineTo(size.width, 0.0);
-
-    path.addOval(
-        Rect.fromCircle(center: Offset(size.width / 2, 0), radius: 29.0));
-    path.addOval(Rect.fromCircle(
-        center: Offset(size.width, size.height / 2), radius: 0.0));
-
-    return path;
-
-    //  final path = Path()
-    //   ..moveTo(0, 0)
-    //   ..lineTo(size.width  - holeRadius, 0.0)
-    //   ..arcToPoint(
-    //     Offset(size.width - right, 0),
-    //     clockwise: false,
-    //     radius: const Radius.circular(10),
-    //   )
-    //   ..lineTo(size.width, 0.0)
-    //   ..lineTo(size.width , size.height )
-    //   ..lineTo(size.width - right, size.height)
-    //   ..arcToPoint(
-    //     Offset(size.width - holeRadius, size.height),
-    //     clockwise: true,
-    //     radius: const Radius.circular(5),
-    //   );
-    //   path.lineTo(0.0, size.height);
-    // path.close();
-    // return path;
-
-    // var path = Path();
-    // path.lineTo(0, size.height-100);
-    // path.quadraticBezierTo(size.width/10, size.height/10, size.width/7, size.height-100);
-    // path.lineTo(size.width, size.height-100);
-    // path.lineTo(size.width, 0);
-    // path.close();
-    // return path;
-
-    // Path path = Path();
-    // path.lineTo(0, size.height);
-    // var curXPos = 0.0;
-    // var curYPos = size.height;
-    // var increment = size.width / 1;
-    // while (curXPos < size.width) {
-    //   curXPos += increment;
-    //   path.arcToPoint(Offset(curXPos, curYPos), radius: const Radius.circular(2));
-    // }
-    //  path.lineTo(size.width, 0);
-    //  return path;
-
-    // arck model
-
-    // var path = Path();
-    // path.lineTo(0, size.height);
-    // path.quadraticBezierTo(
-    //     size.width / 3, size.height / 3, size.width , size.height / 5);
-    // path.lineTo(size.width, 0);
-    // path.close();
-    // return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return true;
+      ),
+    );
   }
 }
