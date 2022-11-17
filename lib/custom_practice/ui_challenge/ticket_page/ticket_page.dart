@@ -1,8 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:ecommerse/custom_practice/ui_chalange/air_aisha.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/ticket_page/flight_stop_ticket.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/ticket_page/ticket_card.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/air_aisha.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/ticket_page/flight_stop_ticket.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/ticket_page/ticket_card.dart';
 import 'package:flutter/material.dart';
 
 class TicketsPage extends StatefulWidget {

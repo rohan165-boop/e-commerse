@@ -1,4 +1,4 @@
-import 'package:ecommerse/custom_practice/ui_chalange/ticket_page/flight_stop_ticket.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/ticket_page/flight_stop_ticket.dart';
 import 'package:flutter/material.dart';
 
 class TicketCard extends StatelessWidget {

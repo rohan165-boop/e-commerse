@@ -1,4 +1,4 @@
-import 'package:ecommerse/custom_practice/ui_chalange/price_table/flight_stop.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/price_table/flight_stop.dart';
 import 'package:flutter/material.dart';
 
 class FlightStopCard extends StatefulWidget {
@@ -71,17 +71,17 @@ class FlightStopCardState extends State<FlightStopCard>
       child: AnimatedBuilder(
         animation: _animationController,
         builder: (context, child) => Stack(
-              alignment: Alignment.centerLeft,
-              children: <Widget>[
-                buildLine(),
-                buildCard(),
-                buildDurationText(),
-                buildAirportNamesText(),
-                buildDateText(),
-                buildPriceText(),
-                buildFromToTimeText(),
-              ],
-            ),
+          alignment: Alignment.centerLeft,
+          children: <Widget>[
+            buildLine(),
+            buildCard(),
+            buildDurationText(),
+            buildAirportNamesText(),
+            buildDateText(),
+            buildPriceText(),
+            buildFromToTimeText(),
+          ],
+        ),
       ),
     );
   }
@@ -116,7 +116,7 @@ class FlightStopCardState extends State<FlightStopCard>
       child: Text(
         "${widget.flightStop.from} \u00B7 ${widget.flightStop.to}",
         style: TextStyle(
-          fontSize: 14.0*animationValue,
+          fontSize: 14.0 * animationValue,
           color: Colors.grey,
         ),
       ),
@@ -144,7 +144,10 @@ class FlightStopCardState extends State<FlightStopCard>
       child: Text(
         widget.flightStop.price,
         style: TextStyle(
-            fontSize: 16.0* animationValue, color: Colors.black, fontWeight: FontWeight.bold,),
+          fontSize: 16.0 * animationValue,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
@@ -157,7 +160,10 @@ class FlightStopCardState extends State<FlightStopCard>
       child: Text(
         widget.flightStop.fromToTime,
         style: TextStyle(
-            fontSize: 12.0* animationValue, color: Colors.grey, fontWeight: FontWeight.w500,),
+          fontSize: 12.0 * animationValue,
+          color: Colors.grey,
+          fontWeight: FontWeight.w500,
+        ),
       ),
     );
   }
@@ -177,8 +183,7 @@ class FlightStopCardState extends State<FlightStopCard>
   Positioned buildCard() {
     double animationValue = _cardSizeAnimation.value;
     double minOuterMargin = 8.0;
-    double outerMargin =
-        minOuterMargin + (1 - animationValue) * maxWidth;
+    double outerMargin = minOuterMargin + (1 - animationValue) * maxWidth;
     return Positioned(
       right: widget.isLeft ? null : outerMargin,
       left: widget.isLeft ? outerMargin : null,

@@ -1,10 +1,10 @@
 import 'package:ecommerse/custom_practice/custom_ticket_ui/ticket_homepage.dart';
-import 'package:ecommerse/custom_practice/flight_survay/flight_survay.dart';
+import 'package:ecommerse/custom_practice/flight_survey/flight_survay.dart';
 import 'package:ecommerse/custom_practice/piano_tile/piano_home.dart';
 import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
 import 'package:ecommerse/custom_practice/snake_game.dart/game.dart';
 import 'package:ecommerse/custom_practice/sy_expedition_travel_challenge/main_page.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/ui_home.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/ui_home.dart';
 import 'package:ecommerse/custom_practice/weather/ui/weather_home.dart';
 import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,11 +16,10 @@ class WishListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
+        appBar: const CustomAppBar(
           title: "Wish List",
         ),
-
-      body: Column(
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             CupertinoButton(
@@ -78,8 +77,7 @@ class WishListScreen extends StatelessWidget {
                     }),
                   ));
                 }),
-
-                CupertinoButton(
+            CupertinoButton(
                 color: Colors.cyan,
                 child: const Text("Snack Game"),
                 onPressed: () {
@@ -87,7 +85,6 @@ class WishListScreen extends StatelessWidget {
                       builder: (context) => const GamePage()));
                 }),
           ],
-        )
-    );
+        ));
   }
 }

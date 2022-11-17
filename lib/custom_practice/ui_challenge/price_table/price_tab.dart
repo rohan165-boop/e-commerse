@@ -1,11 +1,11 @@
 // ignore_for_file: library_private_types_in_public_api, avoid_function_literals_in_foreach_calls, prefer_spread_collections
 import 'dart:async';
 
-import 'package:ecommerse/custom_practice/ui_chalange/fade_route.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/price_table/animated_dot.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/price_table/flight_stop.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/price_table/flight_stop_card.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/ticket_page/ticket_page.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/fade_route.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/price_table/animated_dot.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/price_table/flight_stop.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/price_table/flight_stop_card.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/ticket_page/ticket_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

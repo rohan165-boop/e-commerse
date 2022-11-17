@@ -1,6 +1,6 @@
-import 'package:ecommerse/custom_practice/ui_chalange/air_aisha.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/contant_card.dart';
-import 'package:ecommerse/custom_practice/ui_chalange/rounded_chalange.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/air_aisha.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/contant_card.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/rounded_chalange.dart';
 import 'package:flutter/material.dart';
 
 class UIHomePage extends StatelessWidget {
@@ -19,7 +19,7 @@ class UIHomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   _buildButtonsRow(),
-                  const Expanded(child:  ContentCard()),
+                  const Expanded(child: ContentCard()),
                 ],
               ),
             ),
@@ -33,8 +33,10 @@ class UIHomePage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
-        children:const <Widget>[
-          RoundedButton(text: "ONE WAY",),
+        children: const <Widget>[
+          RoundedButton(
+            text: "ONE WAY",
+          ),
           RoundedButton(text: "ROUND"),
           RoundedButton(text: "MULTICITY", selected: true),
         ],

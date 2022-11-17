@@ -1,4 +1,4 @@
-import 'package:ecommerse/custom_practice/ui_chalange/tap_able_text.dart';
+import 'package:ecommerse/custom_practice/ui_challenge/tap_able_text.dart';
 import 'package:flutter/material.dart';
 
 class MulticityInput extends StatefulWidget {
@@ -38,7 +38,7 @@ class MulticityInputState extends State<MulticityInput>
               padding: const EdgeInsets.fromLTRB(0.0, 0.0, 64.0, 8.0),
               child: TypeableTextFormField(
                 finalText: "Brt",
-                animation: _buildInputAnimation(begin: 0.0,end: 0.2),
+                animation: _buildInputAnimation(begin: 0.0, end: 0.2),
                 decoration: const InputDecoration(
                   icon: Icon(Icons.flight_takeoff, color: Colors.red),
                   labelText: "From",
@@ -48,7 +48,7 @@ class MulticityInputState extends State<MulticityInput>
             Padding(
               padding: const EdgeInsets.fromLTRB(0.0, 0.0, 64.0, 8.0),
               child: TypeableTextFormField(
-                animation: _buildInputAnimation(begin: 0.15,end: 0.35),
+                animation: _buildInputAnimation(begin: 0.15, end: 0.35),
                 finalText: "Ktm",
                 decoration: const InputDecoration(
                   icon: Icon(Icons.flight_land, color: Colors.red),
@@ -62,7 +62,7 @@ class MulticityInputState extends State<MulticityInput>
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: TypeableTextFormField(
-                      animation: _buildInputAnimation(begin: 0.3,end: 0.5),
+                      animation: _buildInputAnimation(begin: 0.3, end: 0.5),
                       finalText: "Nepal",
                       decoration: const InputDecoration(
                         icon: Icon(Icons.flight_land, color: Colors.red),
@@ -76,14 +76,15 @@ class MulticityInputState extends State<MulticityInput>
                   alignment: Alignment.center,
                   child: IconButton(
                       onPressed: () => textInputAnimationController.forward(),
-                      icon: const Icon(Icons.add_circle_outline, color: Colors.grey)),
+                      icon: const Icon(Icons.add_circle_outline,
+                          color: Colors.grey)),
                 ),
               ],
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0.0, 0.0, 64.0, 8.0),
               child: TypeableTextFormField(
-                animation: _buildInputAnimation(begin: 0.45,end: 0.65),
+                animation: _buildInputAnimation(begin: 0.45, end: 0.65),
                 finalText: "4",
                 decoration: const InputDecoration(
                   icon: Icon(Icons.person, color: Colors.red),
@@ -125,11 +126,10 @@ class MulticityInputState extends State<MulticityInput>
     );
   }
 
-  CurvedAnimation _buildInputAnimation({required double begin, required double end}) {
+  CurvedAnimation _buildInputAnimation(
+      {required double begin, required double end}) {
     return CurvedAnimation(
         parent: textInputAnimationController,
-        curve: Interval(begin, end, curve: Curves.linear)
-    );
+        curve: Interval(begin, end, curve: Curves.linear));
   }
-
 }
