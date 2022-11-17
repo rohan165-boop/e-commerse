@@ -13,4 +13,5 @@ class AppColors {
 
   static const grey = Color(0xff808080);
   static const orange = Color(0xffffaf00);
+  static const water = Colors.cyan;
 }

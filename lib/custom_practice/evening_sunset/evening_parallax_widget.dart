@@ -14,6 +14,7 @@ class EveningParallaxWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       left: -45,
+      right: 0,
       top: top,
       child: SizedBox(
         height: 550,
