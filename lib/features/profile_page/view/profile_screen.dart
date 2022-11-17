@@ -58,8 +58,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color.fromARGB(255, 66, 240, 210),
-                Color.fromARGB(255, 253, 244, 193)
+                AppColors.skycolor,
+                AppColors.suncolor,
+                AppColors.sunrise
               ]),
         ),
         child: Stack(
@@ -68,7 +69,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
               bottom: (screensize.height * 0.18) + (_sunspeed * _scrolloffset),
               left: 0,
               right: 190,
-              child: SvgPicture.asset(SVGConstants.sun),
+              child: ValueListenableBuilder<bool>(
+                  valueListenable: isSunset,
+                  builder: (context, value, _) {
+                    return SvgPicture.asset(
+                      SVGConstants.sun,
+                      color: value ? AppColors.sun1 : AppColors.sun,
+                    );
+                  }),
             ),
             Positioned(
               bottom: _layer4speed * _scrolloffset,

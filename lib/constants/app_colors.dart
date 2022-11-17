@@ -14,4 +14,9 @@ class AppColors {
   static const grey = Color(0xff808080);
   static const orange = Color(0xffffaf00);
   static const water = Colors.cyan;
+  static const sun = Color(0xffec5300);
+  static const sun1 = Color(0xffecca00);
+  static const suncolor = Color(0xffec9b00);
+  static const skycolor = Color.fromARGB(255, 66, 240, 210);
+  static const sunrise = Color.fromARGB(255, 253, 244, 193);
 }
