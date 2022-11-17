@@ -1,6 +1,7 @@
 import 'package:ecommerse/constants/image_constants.dart';
 import 'package:ecommerse/custom_practice/a_challenge/a_challenge.dart';
 import 'package:ecommerse/custom_practice/custom_ticket_ui/ticket_homepage.dart';
+import 'package:ecommerse/custom_practice/evening_sunset/evening.dart';
 import 'package:ecommerse/custom_practice/flight_survey/flight_survay.dart';
 import 'package:ecommerse/custom_practice/piano_tile/piano_home.dart';
 import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
@@ -118,6 +119,17 @@ List<AppModel> appModel = [
           AppSettings.navigatorKey.currentContext!,
           MaterialPageRoute(
             builder: (context) => const AChallengeHomePage(),
+          ));
+    },
+    image: ImageConstants.steve,
+  ),
+  AppModel(
+    title: "Evening",
+    press: () {
+      Navigator.push(
+          AppSettings.navigatorKey.currentContext!,
+          MaterialPageRoute(
+            builder: (context) => const EveningScreen(),
           ));
     },
     image: ImageConstants.steve,

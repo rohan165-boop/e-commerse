@@ -12,4 +12,5 @@ class AppColors {
   static const applightvoilate2 = Color(0xff4F4970);
 
   static const grey = Color(0xff808080);
+  static const orange = Color(0xffffaf00);
 }

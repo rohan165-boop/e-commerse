@@ -26,3 +26,15 @@ class SVGConstants {
   static const String mountainslayer3 = 'assets/svg/mountains-layer-3.svg';
   static const String mountainslayer4 = 'assets/svg/mountains-layer-4.svg';
 }
+
+class EveningImage {
+  static const String evening0 = 'assets/evening/parallax0.png';
+  static const String evening1 = 'assets/evening/parallax1.png';
+  static const String evening2 = 'assets/evening/parallax2.png';
+  static const String evening3 = 'assets/evening/parallax3.png';
+  static const String evening4 = 'assets/evening/parallax4.png';
+  static const String evening5 = 'assets/evening/parallax5.png';
+  static const String evening6 = 'assets/evening/parallax6.png';
+  static const String evening7 = 'assets/evening/parallax7.png';
+  static const String evening8 = 'assets/evening/parallax8.png';
+}
