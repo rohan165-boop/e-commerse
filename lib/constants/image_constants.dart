@@ -16,6 +16,7 @@ class GardenImage {
   static const String garden9 = 'assets/garden/top-paralax-9.png';
   static const String garden10 = 'assets/garden/top-paralax-10.png';
   static const String garden11 = 'assets/garden/top-paralax-11.png';
+  static const String cloud = 'assets/garden/cloud.png';
 }
 
 class SVGConstants {

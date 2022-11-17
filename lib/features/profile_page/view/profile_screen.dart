@@ -66,6 +66,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Stack(
           children: [
             Positioned(
+              bottom: (screensize.height * 0.6),
+              left: screensize.width * 0.5,
+              right: 0,
+              child: Image.asset(GardenImage.cloud),
+            ),
+            Positioned(
+              bottom: (screensize.height * 0.5),
+              left: 0,
+              right: screensize.width * 0.5,
+              child: Image.asset(GardenImage.cloud),
+            ),
+            Positioned(
               bottom: (screensize.height * 0.18) + (_sunspeed * _scrolloffset),
               left: 0,
               right: 190,
