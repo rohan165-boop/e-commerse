@@ -17,13 +17,8 @@ class CustomButtomSheet extends StatelessWidget {
           children: [
             Column(
               children: [
-                SizedBox(
-                  height: 70,
-                  width: MediaQuery.of(context).size.width,
-                ),
                 Container(
-                  height: 400,
-                  width: 400,
+                  height: MediaQuery.of(context).size.height * 0.8,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(

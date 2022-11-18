@@ -80,6 +80,7 @@ flutter:
     - assets/garden/
     - assets/svg/
     - assets/evening/
+    - assets/painting/
     - assets/bottom_sheet/
   #   - images/a_dot_ham.jpeg
 

@@ -52,3 +52,14 @@ class BottomSheetImage {
   static const String bottomSheet8 = 'assets/bottom_sheet/skerty.jpg';
   static const String bottomSheet9 = 'assets/bottom_sheet/wegz.jpg';
 }
+
+class PaintingImage {
+  static const String painting = 'assets/painting/bg.jpg';
+  static const String painting1 = 'assets/painting/painting2.jpg';
+  static const String painting2 = 'assets/painting/painting3.jpg';
+  static const String painting3 = 'assets/painting/painting4.jpg';
+  static const String painting4 = 'assets/painting/painting5.jpg';
+  static const String painting5 = 'assets/painting/painting6.jpeg';
+  static const String painting6 = 'assets/painting/painting7.jpg';
+  static const String painting7 = 'assets/painting/painting8.jpg';
+}
