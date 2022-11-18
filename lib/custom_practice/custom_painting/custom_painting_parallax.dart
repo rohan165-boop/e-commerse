@@ -1,33 +1,16 @@
 import 'package:ecommerse/constants/image_constants.dart';
 import 'package:ecommerse/custom_practice/custom_painting/custom_dart.dart';
+import 'package:ecommerse/custom_practice/custom_painting/custom_row_parallax_widget.dart';
 import 'package:flutter/material.dart';
 
-class CustomPaintingParallax extends StatefulWidget {
+class CustomPaintingParallax extends StatelessWidget {
   const CustomPaintingParallax({super.key});
-
-  @override
-  State<CustomPaintingParallax> createState() => _CustomPaintingParallaxState();
-}
-
-class _CustomPaintingParallaxState extends State<CustomPaintingParallax> {
-  PageController? pageController;
-  double pageOffset = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    pageController = PageController(viewportFraction: 0.7);
-    pageController!.addListener(() {
-      setState(() {
-        pageOffset = pageController!.page!;
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: const Text("Painting Parallax"),
       ),
       body: Container(
@@ -80,8 +63,8 @@ class _CustomPaintingParallaxState extends State<CustomPaintingParallax> {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
+              children: const [
+                Padding(
                   padding: EdgeInsets.only(left: 20, bottom: 20),
                   child: Text(
                     'Highlight Paintings',
@@ -91,49 +74,7 @@ class _CustomPaintingParallaxState extends State<CustomPaintingParallax> {
                     ),
                   ),
                 ),
-                Container(
-                  height: 400,
-                  padding: const EdgeInsets.only(bottom: 30),
-                  child: PageView.builder(
-                    itemCount: paintings.length,
-                    controller: pageController,
-                    itemBuilder: (context, index) {
-                      return Transform.scale(
-                        scale: 1,
-                        child: Container(
-                          padding: const EdgeInsets.only(right: 20),
-                          child: Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(15),
-                                child: Image.asset(
-                                  paintings[index].image,
-                                  height: 370,
-                                  fit: BoxFit.cover,
-                                  alignment:
-                                      Alignment(-pageOffset.abs() + index, 0),
-                                ),
-                              ),
-                              Positioned(
-                                left: 10,
-                                bottom: 20,
-                                right: 10,
-                                child: Text(
-                                  paintings[index].title,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 35,
-                                    fontStyle: FontStyle.italic,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                )
+                CustomRowParallaxWidget()
               ],
             )
           ],

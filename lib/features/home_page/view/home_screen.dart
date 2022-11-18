@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/constants/image_constants.dart';
+import 'package:ecommerse/custom_practice/custom_painting/custom_row_parallax_widget.dart';
 import 'package:ecommerse/features/home_page/view/widget/paralax_background.dart';
 import 'package:flutter/material.dart';
 
@@ -105,16 +106,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
-                    color: AppColors.appBlack,
-                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                        color: AppColors.appBlack,
+                        image: DecorationImage(
+                            image: AssetImage(BottomSheetImage.bottomSheet9),
+                            fit: BoxFit.cover)),
                     child: const Text(
-                      "Paralax Effect",
+                      "Parallax Effect",
                       style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                          color: AppColors.water,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40),
                     ),
-                  )
+                  ),
                 ],
               ),
             )

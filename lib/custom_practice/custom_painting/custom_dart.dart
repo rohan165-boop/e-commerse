@@ -39,4 +39,8 @@ List<PaintingModel> paintings = [
     image: PaintingImage.painting7,
     title: "The Night Cafa",
   ),
+  PaintingModel(
+    image: BottomSheetImage.bottomSheet9,
+    title: "The Devil",
+  ),
 ];
