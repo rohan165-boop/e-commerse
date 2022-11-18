@@ -1,5 +1,6 @@
 import 'package:ecommerse/constants/image_constants.dart';
 import 'package:ecommerse/custom_practice/a_challenge/a_challenge.dart';
+import 'package:ecommerse/custom_practice/bottomsheet/custom_bottom_sheet.dart';
 import 'package:ecommerse/custom_practice/custom_ticket_ui/ticket_homepage.dart';
 import 'package:ecommerse/custom_practice/evening_sunset/evening.dart';
 import 'package:ecommerse/custom_practice/flight_survey/flight_survay.dart';
@@ -38,7 +39,7 @@ List<AppModel> appModel = [
       Navigator.push(
           AppSettings.navigatorKey.currentContext!,
           MaterialPageRoute(
-            builder: (context) => FirstPage(),
+            builder: (context) => const FirstPage(),
           ));
     },
     image: ImageConstants.rodion,
@@ -133,5 +134,16 @@ List<AppModel> appModel = [
           ));
     },
     image: ImageConstants.steve,
+  ),
+  AppModel(
+    title: "CustomBottomSheet",
+    press: () {
+      Navigator.push(
+          AppSettings.navigatorKey.currentContext!,
+          MaterialPageRoute(
+            builder: (context) => const CustomButtomSheet(),
+          ));
+    },
+    image: BottomSheetImage.bottomSheet9,
   ),
 ];

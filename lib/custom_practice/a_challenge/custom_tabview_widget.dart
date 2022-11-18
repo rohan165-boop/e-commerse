@@ -53,10 +53,10 @@ class CustomTabViewWidget extends StatelessWidget {
           transitionDuration: const Duration(milliseconds: 600),
           closedElevation: 0,
           closedShape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(90),
-              ),
-              side: BorderSide(color: Colors.white, width: 1)),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(90),
+            ),
+          ),
           closedColor: AppColors.appPink,
           openBuilder: (BuildContext context, _) => const ContainerDetailPage(),
           closedBuilder: (BuildContext context, _) => Container(

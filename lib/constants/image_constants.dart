@@ -39,3 +39,16 @@ class EveningImage {
   static const String evening7 = 'assets/evening/parallax7.png';
   static const String evening8 = 'assets/evening/parallax8.png';
 }
+
+class BottomSheetImage {
+  static const String bottomSheet = 'assets/bottom_sheet/21.jpg';
+  static const String bottomSheet1 = 'assets/bottom_sheet/aliBaba.jpg';
+  static const String bottomSheet2 = 'assets/bottom_sheet/asyadElSout.jpg';
+  static const String bottomSheet3 = 'assets/bottom_sheet/belSalama.jpg';
+  static const String bottomSheet4 = 'assets/bottom_sheet/dorkGai.jpg';
+  static const String bottomSheet5 = 'assets/bottom_sheet/hustla.jpg';
+  static const String bottomSheet6 = 'assets/bottom_sheet/laqtta.jpg';
+  static const String bottomSheet7 = 'assets/bottom_sheet/mshFair.jpg';
+  static const String bottomSheet8 = 'assets/bottom_sheet/skerty.jpg';
+  static const String bottomSheet9 = 'assets/bottom_sheet/wegz.jpg';
+}

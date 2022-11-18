@@ -1,4 +1,3 @@
-import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/custom_practice/a_challenge/custom_tab_bar_widget.dart';
 import 'package:ecommerse/custom_practice/a_challenge/custom_tabview_widget.dart';
 import 'package:flutter/material.dart';

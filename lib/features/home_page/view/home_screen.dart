@@ -4,8 +4,6 @@ import 'package:ecommerse/constants/image_constants.dart';
 import 'package:ecommerse/features/home_page/view/widget/paralax_background.dart';
 import 'package:flutter/material.dart';
 
-import 'package:ecommerse/widgets/custom_app_bar_widgets.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
