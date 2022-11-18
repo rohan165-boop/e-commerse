@@ -38,7 +38,7 @@ List<AppModel> appModel = [
       Navigator.push(
           AppSettings.navigatorKey.currentContext!,
           MaterialPageRoute(
-            builder: (context) => const FirstPage(),
+            builder: (context) => FirstPage(),
           ));
     },
     image: ImageConstants.rodion,

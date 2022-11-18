@@ -1,10 +1,18 @@
-import 'package:ecommerse/custom_practice/route_transition/custom_page_route.dart';
+import 'package:animations/animations.dart';
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/custom_practice/route_transition/sec_page.dart';
 import 'package:flutter/material.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
 
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  final ContainerTransitionType _containerTransitionType =
+      ContainerTransitionType.fade;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,23 +20,19 @@ class FirstPage extends StatelessWidget {
         title: const Text("First page"),
       ),
       body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("First page"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(CustomRoute(child:const SecendPage()));
-              },
-              child: const Text("Sec page"),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("Third page"),
-            ),
-          ],
+        child: OpenContainer(
+          transitionType: _containerTransitionType,
+          transitionDuration: const Duration(seconds: 2),
+          closedElevation: 0,
+          closedShape: const RoundedRectangleBorder(
+              side: BorderSide(color: Colors.white, width: 1)),
+          closedColor: AppColors.appPink,
+          openBuilder: (BuildContext context, _) => const SecendPage(),
+          closedBuilder: (BuildContext context, _) => Container(
+            height: 100,
+            width: double.infinity,
+            color: AppColors.appPink,
+          ),
         ),
       ),
     );

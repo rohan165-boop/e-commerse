@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/constants/image_constants.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +10,8 @@ class ProfileScreen extends StatefulWidget {
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends State<ProfileScreen>
+    with SingleTickerProviderStateMixin {
   late ScrollController _scrollController;
   ValueNotifier<bool> isSunset = ValueNotifier(false);
 
@@ -46,6 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final double _layer3speed = 0.42;
   final double _layer4speed = 0.375;
   final double _sunspeed = 0.25;
+  final double _cloud1speed = 0.05;
 
   @override
   Widget build(BuildContext context) {
@@ -67,15 +67,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             Positioned(
               bottom: (screensize.height * 0.6),
-              left: screensize.width * 0.5,
-              right: 0,
-              child: Image.asset(GardenImage.cloud),
-            ),
-            Positioned(
-              bottom: (screensize.height * 0.5),
               left: 0,
-              right: screensize.width * 0.5,
-              child: Image.asset(GardenImage.cloud),
+              right: (_cloud1speed * _scrolloffset),
+              child: Image.asset(
+                GardenImage.cloud,
+              ),
             ),
             Positioned(
               bottom: (screensize.height * 0.18) + (_sunspeed * _scrolloffset),
@@ -90,6 +86,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     );
                   }),
             ),
+            Positioned(
+              bottom:
+                  (screensize.height * 0.4) + (_cloud1speed * _scrolloffset),
+              left: (_cloud1speed * _scrolloffset),
+              right: screensize.width * 0.45,
+              child: ValueListenableBuilder<bool>(
+                  valueListenable: isSunset,
+                  builder: (context, value, _) {
+                    return Image.asset(
+                      GardenImage.cloud,
+                      color: value ? AppColors.sun1 : AppColors.sun,
+                    );
+                  }),
+            ),
+
             Positioned(
               bottom: _layer4speed * _scrolloffset,
               left: 0,

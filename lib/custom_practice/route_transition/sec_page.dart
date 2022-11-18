@@ -1,4 +1,4 @@
-import 'package:ecommerse/constants/image_constants.dart';
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SecendPage extends StatelessWidget {
@@ -7,17 +7,18 @@ class SecendPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.appPink,
       appBar: AppBar(
-        title:const Text("Sec page"),
+        title: const Text("Sec page"),
       ),
-      body:Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(ImageConstants.efe, height: 200,),
-          Image.asset(ImageConstants.efe, height: 200,),
-          Image.asset(ImageConstants.efe, height: 200,)
-        ],
-      )
+      // body:Column(
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: [
+      //     Image.asset(ImageConstants.efe, height: 200,),
+      //     Image.asset(ImageConstants.efe, height: 200,),
+      //     Image.asset(ImageConstants.efe, height: 200,)
+      //   ],
+      // )
     );
   }
 }

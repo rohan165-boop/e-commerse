@@ -33,8 +33,8 @@ class WishListScreen extends StatelessWidget {
                 color: Colors.cyan,
                 child: const Text("Route Transition"),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const FirstPage()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => FirstPage()));
                 }),
             CupertinoButton(
                 color: Colors.cyan,
