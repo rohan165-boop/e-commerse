@@ -63,3 +63,39 @@ class PaintingImage {
   static const String painting6 = 'assets/painting/painting7.jpg';
   static const String painting7 = 'assets/painting/painting8.jpg';
 }
+
+class VerticalImage {
+  static const String v0 = 'assets/vertical/0.jpg';
+  static const String v1 = 'assets/vertical/1.jpg';
+  static const String v2 = 'assets/vertical/2.jpg';
+  static const String v3 = 'assets/vertical/3.jpg';
+  static const String v4 = 'assets/vertical/4.jpg';
+  static const String v5 = 'assets/vertical/5.jpg';
+  static const String v6 = 'assets/vertical/6.jpg';
+  static const String v7 = 'assets/vertical/7.jpg';
+  static const String v8 = 'assets/vertical/8.jpg';
+  static const String v9 = 'assets/vertical/9.jpg';
+  static const String v10 = 'assets/vertical/10.jpg';
+  static const String v11 = 'assets/vertical/11.jpg';
+  static const String v12 = 'assets/vertical/12.jpg';
+  static const String v13 = 'assets/vertical/13.jpg';
+  static const String v14 = 'assets/vertical/14.jpg';
+
+  List<String> v15 = [
+    'assets/vertical/0.jpg',
+    'assets/vertical/1.jpg',
+    'assets/vertical/2.jpg',
+    'assets/vertical/3.jpg',
+    'assets/vertical/4.jpg',
+    'assets/vertical/5.jpg',
+    'assets/vertical/6.jpg',
+    'assets/vertical/7.jpg',
+    'assets/vertical/8.jpg',
+    'assets/vertical/9.jpg',
+    'assets/vertical/10.jpg',
+    'assets/vertical/11.jpg',
+    'assets/vertical/12.jpg',
+    'assets/vertical/13.jpg',
+    'assets/vertical/14.jpg',
+  ];
+}

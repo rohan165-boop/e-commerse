@@ -10,6 +10,7 @@ import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
 import 'package:ecommerse/custom_practice/snake_game.dart/game.dart';
 import 'package:ecommerse/custom_practice/sy_expedition_travel_challenge/main_page.dart';
 import 'package:ecommerse/custom_practice/ui_challenge/ui_home.dart';
+import 'package:ecommerse/custom_practice/vertical_parallax/vertical_parallax.dart';
 import 'package:ecommerse/custom_practice/weather/ui/weather_home.dart';
 import 'package:ecommerse/main.dart';
 import 'package:flutter/material.dart';
@@ -157,5 +158,16 @@ List<AppModel> appModel = [
           ));
     },
     image: PaintingImage.painting,
+  ),
+  AppModel(
+    title: "Vertical Parallax",
+    press: () {
+      Navigator.push(
+          AppSettings.navigatorKey.currentContext!,
+          MaterialPageRoute(
+            builder: (context) => const VerticalParallaxHomeScreen(),
+          ));
+    },
+    image: VerticalImage.v0,
   ),
 ];

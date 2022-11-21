@@ -47,6 +47,7 @@ dependencies:
   glassmorphism: ^3.0.0
   flutter_svg: ^1.1.6
   animations: ^2.0.7
+  font_awesome_flutter: ^10.2.1
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +82,7 @@ flutter:
     - assets/svg/
     - assets/evening/
     - assets/painting/
+    - assets/vertical/
     - assets/bottom_sheet/
   #   - images/a_dot_ham.jpeg
 
