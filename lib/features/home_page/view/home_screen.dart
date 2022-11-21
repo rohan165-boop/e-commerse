@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/constants/image_constants.dart';
-import 'package:ecommerse/custom_practice/custom_painting/custom_row_parallax_widget.dart';
 import 'package:ecommerse/features/home_page/view/widget/paralax_background.dart';
 import 'package:flutter/material.dart';
 

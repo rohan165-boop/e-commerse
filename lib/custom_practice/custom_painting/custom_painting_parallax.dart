@@ -1,5 +1,4 @@
 import 'package:ecommerse/constants/image_constants.dart';
-import 'package:ecommerse/custom_practice/custom_painting/custom_dart.dart';
 import 'package:ecommerse/custom_practice/custom_painting/custom_row_parallax_widget.dart';
 import 'package:flutter/material.dart';
 

@@ -14,6 +14,8 @@ class _ProfileScreenState extends State<ProfileScreen>
     with SingleTickerProviderStateMixin {
   late ScrollController _scrollController;
   ValueNotifier<bool> isSunset = ValueNotifier(false);
+  late Animation<double> animation;
+  late AnimationController controller;
 
   @override
   void initState() {
