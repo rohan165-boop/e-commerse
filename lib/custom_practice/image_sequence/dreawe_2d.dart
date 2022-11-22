@@ -134,7 +134,7 @@ class _Drawer2dHomeScreenState extends State<Drawer2dHomeScreen> {
                   ..rotateY((pi / 6) * value),
                 child: Scaffold(
                   appBar: AppBar(
-                    title: const Text("3d Drawer"),
+                    title: const Text("3D Drawer"),
                   ),
                   body: const Center(
                     child: Text("Swipe right to open the menu"),

@@ -1,20 +1,5 @@
+import 'package:ecommerse/app/route.dart';
 import 'package:ecommerse/constants/image_constants.dart';
-import 'package:ecommerse/custom_practice/a_challenge/a_challenge.dart';
-import 'package:ecommerse/custom_practice/bottomsheet/custom_bottom_sheet.dart';
-import 'package:ecommerse/custom_practice/custom_painting/custom_painting_parallax.dart';
-import 'package:ecommerse/custom_practice/custom_ticket_ui/ticket_homepage.dart';
-import 'package:ecommerse/custom_practice/evening_sunset/evening.dart';
-import 'package:ecommerse/custom_practice/flight_survey/flight_survay.dart';
-import 'package:ecommerse/custom_practice/guitar_drawer_3d/guitar_drawer_3d.dart';
-import 'package:ecommerse/custom_practice/image_sequence/dreawe_2d.dart';
-import 'package:ecommerse/custom_practice/image_sequence/image_sequence_screen.dart';
-import 'package:ecommerse/custom_practice/piano_tile/piano_home.dart';
-import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
-import 'package:ecommerse/custom_practice/snake_game/game.dart';
-import 'package:ecommerse/custom_practice/sy_expedition_travel_challenge/main_page.dart';
-import 'package:ecommerse/custom_practice/ui_challenge/ui_home.dart';
-import 'package:ecommerse/custom_practice/vertical_parallax/vertical_parallax.dart';
-import 'package:ecommerse/custom_practice/weather/ui/weather_home.dart';
 import 'package:ecommerse/main.dart';
 import 'package:flutter/material.dart';
 
@@ -29,180 +14,128 @@ List<AppModel> appModel = [
   AppModel(
     title: "Ticket",
     press: () {
-      Navigator.push(
-        AppSettings.navigatorKey.currentContext!,
-        MaterialPageRoute(
-          builder: (context) => const CustomTicketHome(),
-        ),
-      );
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.ticketRoute);
     },
     image: ImageConstants.efe,
   ),
   AppModel(
     title: "Route",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const FirstPage(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.pageRoute);
     },
     image: ImageConstants.rodion,
   ),
   AppModel(
     title: "Sy_Travel",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const MainPage(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.sytravelRoute);
     },
     image: ImageConstants.steve,
   ),
   AppModel(
     title: "Flight Survey",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const FlightsStepper(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.flightsurveyRoute);
     },
     image: ImageConstants.efe,
   ),
   AppModel(
     title: "UI Challenge",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const UIHomePage(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.uichallengeRoute);
     },
     image: ImageConstants.rodion,
   ),
   AppModel(
     title: "Piano",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const PinoHomeScreen(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.pianoRoute);
     },
     image: ImageConstants.steve,
   ),
   AppModel(
     title: "Weather",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) =>
-                LayoutBuilder(builder: (context, constraints) {
-              return WeatherHomeScreen(width: constraints.maxWidth);
-            }),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.weatherRoute);
     },
     image: ImageConstants.efe,
   ),
   AppModel(
     title: "Snake Game",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const GamePage(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.snakeRoute);
     },
     image: ImageConstants.rodion,
   ),
   AppModel(
     title: "A-Challenge",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const AChallengeHomePage(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.achallengeRoute);
     },
     image: ImageConstants.steve,
   ),
   AppModel(
     title: "Evening",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const EveningScreen(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.eveningRoute);
     },
     image: ImageConstants.steve,
   ),
   AppModel(
     title: "CustomBottomSheet",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const CustomButtomSheet(),
-          ));
+      Navigator.pushNamed(AppSettings.navigatorKey.currentContext!,
+          AppRoute.custombottomsheetRoute);
     },
     image: BottomSheetImage.bottomSheet9,
   ),
   AppModel(
     title: "Parallax Painting",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const CustomPaintingParallax(),
-          ));
+      Navigator.pushNamed(AppSettings.navigatorKey.currentContext!,
+          AppRoute.parallaxpaintingRoute);
     },
     image: PaintingImage.painting,
   ),
   AppModel(
     title: "Vertical Parallax",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const VerticalParallaxHomeScreen(),
-          ));
+      Navigator.pushNamed(AppSettings.navigatorKey.currentContext!,
+          AppRoute.verticalparallaxRoute);
     },
     image: VerticalImage.v0,
   ),
   AppModel(
     title: "Guitar 3d Drawer",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const GuitarDrawer3dHomeScreen(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.guitar3dRoute);
     },
     image: VerticalImage.v4,
   ),
   AppModel(
     title: "Image Sequence",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const ImageSequenceHomeScreen(),
-          ));
+      Navigator.pushNamed(AppSettings.navigatorKey.currentContext!,
+          AppRoute.imagesequenceRoute);
     },
     image: VerticalImage.v9,
   ),
   AppModel(
     title: "Drawer",
     press: () {
-      Navigator.push(
-          AppSettings.navigatorKey.currentContext!,
-          MaterialPageRoute(
-            builder: (context) => const Drawer2dHomeScreen(),
-          ));
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.drawer3dRoute);
     },
     image: VerticalImage.v5,
   ),

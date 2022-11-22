@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen>
         _onScroll();
       })
       ..addListener(() {
-        if (_scrollController.position.pixels >= 1000) {
+        if (_scrollController.position.pixels >= 900) {
           isSunset.value = true;
         } else if (_scrollController.position.pixels <= 10) {
           isSunset.value = false;
