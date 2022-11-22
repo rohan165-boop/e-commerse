@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_sequence_animator/image_sequence_animator.dart';
 
@@ -12,23 +11,16 @@ class ImageSequenceHomeScreen extends StatefulWidget {
 
 class _ImageSequenceHomeScreenState extends State<ImageSequenceHomeScreen> {
   ImageSequenceAnimatorState? get imageSequenceAnimator =>
-      isOnline ? onlineImageSequenceAnimator : offlineImageSequenceAnimator;
+      offlineImageSequenceAnimator;
   ImageSequenceAnimatorState? offlineImageSequenceAnimator;
-  ImageSequenceAnimatorState? onlineImageSequenceAnimator;
 
-  bool isOnline = false;
   bool wasPlaying = false;
 
   Color color1 = Colors.greenAccent;
   Color color2 = Colors.indigo;
 
-  String onlineOfflineText = "Use Online";
-  String loopText = "Start Loop";
-  String boomerangText = "Start Boomerang";
-
-  bool _useFullPaths = false;
+  bool useFullPaths = false;
   List<String>? _fullPathsOffline;
-  List<String>? _fullPathsOnline;
 
   void onOfflineReadyToPlay(ImageSequenceAnimatorState imageSequenceAnimator) {
     offlineImageSequenceAnimator = imageSequenceAnimator;
@@ -36,10 +28,6 @@ class _ImageSequenceHomeScreenState extends State<ImageSequenceHomeScreen> {
 
   void onOfflinePlaying(ImageSequenceAnimatorState imageSequenceAnimator) {
     setState(() {});
-  }
-
-  void onOnlineReadyToPlay(ImageSequenceAnimatorState imageSequenceAnimator) {
-    onlineImageSequenceAnimator = imageSequenceAnimator;
   }
 
   void onOnlinePlaying(ImageSequenceAnimatorState imageSequenceAnimator) {
@@ -68,17 +56,26 @@ class _ImageSequenceHomeScreenState extends State<ImageSequenceHomeScreen> {
     );
   }
 
+  ontoggle(double value) {
+    if (wasPlaying == imageSequenceAnimator!.isPlaying) {
+      imageSequenceAnimator!.pause();
+    } else if (wasPlaying) {
+      imageSequenceAnimator!.play();
+    } else {
+      imageSequenceAnimator!.skip(value);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    if (_fullPathsOffline == null && _fullPathsOnline == null) {
+    if (_fullPathsOffline == null) {
       _fullPathsOffline = [];
-      _fullPathsOnline = [];
       for (int i = 0; i < 60; i++) {
-        String _value = i.toString();
-        while (_value.length < 5) _value = "0$_value";
-        _fullPathsOffline!.add("assets/ImageSequence/Frame_$_value.png");
-        _fullPathsOnline!.add(
-            "https://www.cosmossoftware.coffee/AppData/ImageSequenceAnimator/ImageSequence/Frame_$_value.png");
+        String value = i.toString();
+        while (value.length < 5) {
+          value = "0$value";
+        }
+        _fullPathsOffline!.add("assets/ImageSequence/Frame_$value.png");
       }
     }
     return Scaffold(
@@ -91,75 +88,59 @@ class _ImageSequenceHomeScreenState extends State<ImageSequenceHomeScreen> {
             flex: 4,
             child: Padding(
               padding: const EdgeInsets.all(25),
-              child: isOnline
-                  ? ImageSequenceAnimator(
-                      "https://www.cosmossoftware.coffee/AppData/ImageSequenceAnimator/ImageSequence",
-                      "Frame_",
-                      0,
-                      5,
-                      "png",
-                      60,
-                      key: const Key("online"),
-                      fullPaths: _useFullPaths ? _fullPathsOffline : null,
-                      isAutoPlay: false,
-                      isOnline: true,
-                      // color: color1,
-                      onReadyToPlay: onOnlineReadyToPlay,
-                      onPlaying: onOnlinePlaying,
-                    )
-                  : ImageSequenceAnimator(
-                      "assets/guitarsequence",
-                      "",
-                      1,
-                      4,
-                      "png",
-                      120,
-                      key: const Key("offline"),
-                      fullPaths: _useFullPaths ? _fullPathsOffline : null,
-                      color: color1,
-                      onReadyToPlay: onOfflineReadyToPlay,
-                      onPlaying: onOfflinePlaying,
-                    ),
+              child: ImageSequenceAnimator(
+                "assets/guitarsequence",
+                "",
+                1,
+                4,
+                "png",
+                120,
+                key: const Key("offline"),
+                fullPaths: useFullPaths ? _fullPathsOffline : null,
+                // color: color1,
+                // onReadyToPlay: onOfflineReadyToPlay,
+                // onPlaying: onOfflinePlaying,
+              ),
             ),
           ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 4,
-                  child: CupertinoSlider(
-                    value: imageSequenceAnimator == null
-                        ? 0.0
-                        : imageSequenceAnimator!.currentProgress,
-                    min: 0.0,
-                    max: imageSequenceAnimator == null
-                        ? 100.0
-                        : imageSequenceAnimator!.totalProgress,
-                    onChangeStart: (double value) {
-                      wasPlaying = imageSequenceAnimator!.isPlaying;
-                      imageSequenceAnimator!.pause();
-                    },
-                    onChanged: (double value) {
-                      imageSequenceAnimator!.skip(value);
-                    },
-                    onChangeEnd: (double value) {
-                      if (wasPlaying) imageSequenceAnimator!.play();
-                    },
-                  ),
-                ),
-                Expanded(
-                  child: Center(
-                    child: Text(
-                      imageSequenceAnimator == null
-                          ? "0.0"
-                          : ("${imageSequenceAnimator!.currentTime.floor()}/${imageSequenceAnimator!.totalTime.floor()}"),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Expanded(
+          //   child: Row(
+          //     children: [
+          //       Expanded(
+          //         flex: 4,
+          //         child: CupertinoSlider(
+          //           value: imageSequenceAnimator == null
+          //               ? 0.0
+          //               : imageSequenceAnimator!.currentProgress,
+          //           min: 0.0,
+          //           max: imageSequenceAnimator == null
+          //               ? 100.0
+          //               : imageSequenceAnimator!.totalProgress,
+          //           onChangeStart: (double value) {
+          //             wasPlaying = imageSequenceAnimator!.isPlaying;
+          //             imageSequenceAnimator!.pause();
+          //           },
+          //           onChanged: (double value) {
+          //             imageSequenceAnimator!.skip(value);
+          //           },
+          //           onChangeEnd: (double value) {
+          //             if (wasPlaying) imageSequenceAnimator!.play();
+          //           },
+          //         ),
+          //       ),
+          //       Expanded(
+          //         child: Center(
+          //           child: Text(
+          //             imageSequenceAnimator == null
+          //                 ? "0.0"
+          //                 : ("${imageSequenceAnimator!.currentTime.floor()}/${imageSequenceAnimator!.totalTime.floor()}"),
+          //             textAlign: TextAlign.center,
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
