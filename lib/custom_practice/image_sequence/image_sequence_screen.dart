@@ -101,7 +101,7 @@ class _ImageSequenceHomeScreenState extends State<ImageSequenceHomeScreen> {
                       60,
                       key: const Key("online"),
                       fullPaths: _useFullPaths ? _fullPathsOffline : null,
-                      isAutoPlay: true,
+                      isAutoPlay: false,
                       isOnline: true,
                       // color: color1,
                       onReadyToPlay: onOnlineReadyToPlay,

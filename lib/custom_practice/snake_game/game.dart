@@ -75,7 +75,8 @@ class _GamePageState extends State<GamePage> {
   Offset getRandomPositionWithinRange() {
     int posX = Random().nextInt(upperBoundX!) + lowerBoundX!;
     int posY = Random().nextInt(upperBoundY!) + lowerBoundY!;
-    return Offset(roundToNearestTens(posX).toDouble(), roundToNearestTens(posY).toDouble());
+    return Offset(roundToNearestTens(posX).toDouble(),
+        roundToNearestTens(posY).toDouble());
   }
 
   bool detectCollision(Offset position) {
@@ -121,7 +122,8 @@ class _GamePageState extends State<GamePage> {
               },
               child: const Text(
                 "Restart",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -135,7 +137,8 @@ class _GamePageState extends State<GamePage> {
 
     if (detectCollision(position) == true) {
       if (timer != null && timer!.isActive) timer!.cancel();
-      await Future.delayed(const Duration(milliseconds: 500), () => showGameOverDialog());
+      await Future.delayed(
+          const Duration(milliseconds: 500), () => showGameOverDialog());
       return position;
     }
 
@@ -248,8 +251,8 @@ class _GamePageState extends State<GamePage> {
       left: lowerBoundX!.toDouble(),
       child: Container(
         width: (upperBoundX! - lowerBoundX! + step).toDouble(),
-        // height: (upperBoundY! - lowerBoundY! + step).toDouble(),
-        height: MediaQuery.of(context).size.height * 0.55,
+        height: (upperBoundY! - lowerBoundY! - step).toDouble(),
+        // height: MediaQuery.of(context).size.height * 0.55,
         decoration: BoxDecoration(
           border: Border.all(
             color: Colors.black.withOpacity(0.2),
@@ -289,8 +292,8 @@ class _GamePageState extends State<GamePage> {
                 children: getPieces(),
               ),
               food!,
-              getControls(),
               getScore(),
+              getControls(),
             ],
           ),
         ),

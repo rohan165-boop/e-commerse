@@ -1,4 +1,4 @@
-import 'package:ecommerse/custom_practice/snake_game.dart/control_button.dart';
+import 'package:ecommerse/custom_practice/snake_game/control_button.dart';
 import 'package:flutter/material.dart';
 
 import 'direction.dart';
