@@ -5,6 +5,7 @@ import 'package:ecommerse/custom_practice/custom_painting/custom_painting_parall
 import 'package:ecommerse/custom_practice/custom_ticket_ui/ticket_homepage.dart';
 import 'package:ecommerse/custom_practice/evening_sunset/evening.dart';
 import 'package:ecommerse/custom_practice/flight_survey/flight_survay.dart';
+import 'package:ecommerse/custom_practice/guitar_drawer_3d/guitar_drawer_3d.dart';
 import 'package:ecommerse/custom_practice/piano_tile/piano_home.dart';
 import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
 import 'package:ecommerse/custom_practice/snake_game.dart/game.dart';
@@ -169,5 +170,16 @@ List<AppModel> appModel = [
           ));
     },
     image: VerticalImage.v0,
+  ),
+  AppModel(
+    title: "Guitar 3d Drawer",
+    press: () {
+      Navigator.push(
+          AppSettings.navigatorKey.currentContext!,
+          MaterialPageRoute(
+            builder: (context) => const GuitarDrawer3dHomeScreen(),
+          ));
+    },
+    image: VerticalImage.v4,
   ),
 ];
