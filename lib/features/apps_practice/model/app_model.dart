@@ -6,6 +6,7 @@ import 'package:ecommerse/custom_practice/custom_ticket_ui/ticket_homepage.dart'
 import 'package:ecommerse/custom_practice/evening_sunset/evening.dart';
 import 'package:ecommerse/custom_practice/flight_survey/flight_survay.dart';
 import 'package:ecommerse/custom_practice/guitar_drawer_3d/guitar_drawer_3d.dart';
+import 'package:ecommerse/custom_practice/image_sequence/image_sequence_screen.dart';
 import 'package:ecommerse/custom_practice/piano_tile/piano_home.dart';
 import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
 import 'package:ecommerse/custom_practice/snake_game.dart/game.dart';
@@ -181,5 +182,16 @@ List<AppModel> appModel = [
           ));
     },
     image: VerticalImage.v4,
+  ),
+  AppModel(
+    title: "Image Sequence",
+    press: () {
+      Navigator.push(
+          AppSettings.navigatorKey.currentContext!,
+          MaterialPageRoute(
+            builder: (context) => const ImageSequenceHomeScreen(),
+          ));
+    },
+    image: VerticalImage.v9,
   ),
 ];

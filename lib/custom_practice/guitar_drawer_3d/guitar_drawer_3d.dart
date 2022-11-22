@@ -23,6 +23,8 @@ class _GuitarDrawer3dHomeScreenState extends State<GuitarDrawer3dHomeScreen>
   Size _screen = const Size(0, 0);
   CurvedAnimation? _animator;
   CurvedAnimation? _objAnimator;
+  bool useFullPaths = false;
+  List<String>? _fullPathsOffline;
 
   @override
   void initState() {
