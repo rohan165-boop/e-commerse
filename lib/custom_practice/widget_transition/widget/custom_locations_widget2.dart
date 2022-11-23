@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/location.dart';
 import 'package:ecommerse/custom_practice/widget_transition/widget/custom_location_widget.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _CustomLocationsWidget2State extends State<CustomLocationsWidget2> {
           ),
           Text(
             '${pageIndex + 1}/${locations.length}',
-            style: const TextStyle(color: Colors.white70),
+            style: TextStyle(color: AppColors.white.withOpacity(0.7)),
           ),
           const SizedBox(height: 12)
         ],

@@ -1,3 +1,4 @@
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class StarsWidget extends StatelessWidget {
@@ -17,7 +18,7 @@ class StarsWidget extends StatelessWidget {
           .map((star) => Container(
                 margin: const EdgeInsets.only(right: 4),
                 child: const Icon(Icons.star_rate,
-                    size: 18, color: Colors.blueGrey),
+                    size: 18, color: AppColors.bluegrey),
               ))
           .toList(),
     );

@@ -19,4 +19,5 @@ class AppColors {
   static const suncolor = Color(0xffec9b00);
   static const skycolor = Color.fromARGB(255, 66, 240, 210);
   static const sunrise = Color.fromARGB(255, 253, 244, 193);
+  static const bluegrey = Colors.blueGrey;
 }

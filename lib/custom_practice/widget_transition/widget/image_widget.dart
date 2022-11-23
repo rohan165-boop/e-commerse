@@ -1,3 +1,4 @@
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/hero_tags.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/location.dart';
 import 'package:ecommerse/custom_practice/widget_transition/widget/custom_hero_widget.dart';
@@ -21,11 +22,14 @@ class CustomImageWidget extends StatelessWidget {
       height: size.height * 0.5,
       width: size.width * 0.8,
       child: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           boxShadow: [
-            BoxShadow(color: Colors.black26, blurRadius: 2, spreadRadius: 1),
+            BoxShadow(
+                color: AppColors.appBlack.withOpacity(0.12),
+                blurRadius: 2,
+                spreadRadius: 1),
           ],
-          borderRadius: BorderRadius.all(Radius.circular(8)),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
         ),
         child: Stack(
           children: [
@@ -59,7 +63,7 @@ class CustomImageWidget extends StatelessWidget {
   Widget buildTopText() => Text(
         location.name,
         style: const TextStyle(
-          color: Colors.white,
+          color: AppColors.white,
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),

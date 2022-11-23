@@ -1,3 +1,4 @@
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/hero_tags.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/location.dart';
 import 'package:ecommerse/custom_practice/widget_transition/widget/custom_hero_widget.dart';
@@ -19,7 +20,7 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         extendBodyBehindAppBar: true,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,

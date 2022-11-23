@@ -1,3 +1,4 @@
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/hero_tags.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/location.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/review.dart';
@@ -47,7 +48,7 @@ class ReviewsWidget extends StatelessWidget {
                   tag: HeroTag.avatar(review, locations.indexOf(location)),
                   child: CircleAvatar(
                     radius: 16,
-                    backgroundColor: Colors.black12,
+                    backgroundColor: AppColors.appBlack.withOpacity(0.12),
                     backgroundImage: AssetImage(review.urlImage),
                   ),
                 ),
@@ -66,7 +67,7 @@ class ReviewsWidget extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               review.description,
-              style: const TextStyle(color: Colors.black54),
+              style: TextStyle(color: AppColors.appBlack.withOpacity(0.54)),
             ),
           ],
         ),

@@ -1,3 +1,4 @@
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/custom_practice/widget_transition/widget/custom_locations_widget2.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class TransitionHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: AppColors.bluegrey,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -27,8 +28,8 @@ class TransitionHomeScreen extends StatelessWidget {
       body: const CustomLocationsWidget2(),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
-        unselectedItemColor: Colors.white54,
-        selectedItemColor: Colors.white,
+        unselectedItemColor: AppColors.white.withOpacity(0.54),
+        selectedItemColor: AppColors.white,
         backgroundColor: Colors.transparent,
         showSelectedLabels: false,
         showUnselectedLabels: false,

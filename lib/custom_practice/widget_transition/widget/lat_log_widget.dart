@@ -21,7 +21,7 @@ class LatLongWidget extends StatelessWidget {
             tag: HeroTag.latitude(location),
             child: Text(
               location.latitude,
-              style: const TextStyle(color: Colors.white70),
+              style: TextStyle(color: AppColors.white.withOpacity(0.7)),
             ),
           ),
           CustomHeroWidget(
@@ -35,7 +35,7 @@ class LatLongWidget extends StatelessWidget {
             tag: HeroTag.logitude(location),
             child: Text(
               location.longitude,
-              style: const TextStyle(color: Colors.white70),
+              style: TextStyle(color: AppColors.white.withOpacity(0.7)),
             ),
           )
         ],

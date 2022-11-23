@@ -1,3 +1,4 @@
+import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/hero_tags.dart';
 import 'package:ecommerse/custom_practice/widget_transition/model/location.dart';
 import 'package:ecommerse/custom_practice/widget_transition/widget/custom_hero_widget.dart';
@@ -15,7 +16,7 @@ class ExpandedContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: AppColors.white,
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         padding: const EdgeInsets.all(8),
@@ -44,7 +45,7 @@ class ExpandedContentWidget extends StatelessWidget {
             tag: HeroTag.addressLine2(location),
             child: Text(
               location.addressLine2,
-              style: const TextStyle(color: Colors.black45),
+              style: TextStyle(color: AppColors.appBlack.withOpacity(0.45)),
             ),
           ),
           CustomHeroWidget(
@@ -65,7 +66,7 @@ class ExpandedContentWidget extends StatelessWidget {
               tag: HeroTag.avatar(review, pageIndex),
               child: CircleAvatar(
                 radius: 16,
-                backgroundColor: Colors.black12,
+                backgroundColor: AppColors.appBlack.withOpacity(0.12),
                 backgroundImage: AssetImage(review.urlImage),
               ),
             ),
