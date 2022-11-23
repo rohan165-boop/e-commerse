@@ -42,7 +42,7 @@ class _BottomSheetTransitionState extends State<BottomSheetTransition>
   }
 
   void verticalDragUpdate(DragUpdateDetails details) {
-    _controller.value -= details.primaryDelta! / maxHeight;
+    _controller.value -= details.primaryDelta! / -maxHeight;
   }
 
   void verticalDragEnd(DragEndDetails details) {
@@ -50,7 +50,7 @@ class _BottomSheetTransitionState extends State<BottomSheetTransition>
         _controller.status == AnimationStatus.completed) return;
 
     final double flingVelocity =
-        details.velocity.pixelsPerSecond.dy / maxHeight;
+        details.velocity.pixelsPerSecond.dy / -maxHeight;
 
     if (flingVelocity < 0) {
       _controller.fling(velocity: math.max(1, -flingVelocity));
@@ -88,7 +88,7 @@ class _BottomSheetTransitionState extends State<BottomSheetTransition>
         return Positioned(
           left: 0,
           right: 0,
-          bottom: 0,
+          // bottom: 0,
           height: lerp(120, maxHeight),
           child: GestureDetector(
             onTap: toggle,
@@ -97,7 +97,8 @@ class _BottomSheetTransitionState extends State<BottomSheetTransition>
             child: Container(
               decoration: const BoxDecoration(
                 color: Color(0xff920201),
-                borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                borderRadius:
+                    BorderRadius.vertical(bottom: Radius.circular(30)),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Stack(

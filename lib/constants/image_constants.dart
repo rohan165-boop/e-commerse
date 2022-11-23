@@ -99,3 +99,14 @@ class VerticalImage {
     'assets/vertical/14.jpg',
   ];
 }
+
+class ImageTransitionConstant {
+  static const String image1 = "assets/transition/mountain.jpg";
+  static const String image2 = "assets/transition/mountain2.jpg";
+  static const String image3 = "assets/transition/sea.jpg";
+  static const String image4 = "assets/transition/sea2.jpg";
+  static const String image5 = "assets/transition/user1.png";
+  static const String image6 = "assets/transition/user2.png";
+  static const String image7 = "assets/transition/user3.png";
+  static const String image8 = "assets/transition/user4.png";
+}

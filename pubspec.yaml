@@ -49,6 +49,7 @@ flutter:
     - assets/evening/
     - assets/painting/
     - assets/vertical/
+    - assets/transition/
     - assets/bottom_sheet/
     - assets/guitarsequence/
 

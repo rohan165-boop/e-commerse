@@ -139,4 +139,12 @@ List<AppModel> appModel = [
     },
     image: VerticalImage.v5,
   ),
+  AppModel(
+    title: "Transition",
+    press: () {
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.TransitionRoute);
+    },
+    image: VerticalImage.v7,
+  ),
 ];

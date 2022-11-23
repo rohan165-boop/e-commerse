@@ -17,4 +17,5 @@ class AppRoute {
   static const String guitar3dRoute = "/guitar3d";
   static const String imagesequenceRoute = "/imagesequence";
   static const String drawer3dRoute = "/drawer3d";
+  static const String TransitionRoute = "/transition";
 }
