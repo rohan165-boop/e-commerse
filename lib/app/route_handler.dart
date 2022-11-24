@@ -9,6 +9,9 @@ import 'package:ecommerse/custom_practice/guitar_drawer_3d/guitar_drawer_3d.dart
 import 'package:ecommerse/custom_practice/image_sequence/dreawe_2d.dart';
 import 'package:ecommerse/custom_practice/image_sequence/image_sequence_screen.dart';
 import 'package:ecommerse/custom_practice/piano_tile/piano_home.dart';
+import 'package:ecommerse/custom_practice/qr_code/qr_home_screen.dart';
+import 'package:ecommerse/custom_practice/qr_code/widget/qr_create_screen.dart';
+import 'package:ecommerse/custom_practice/qr_code/widget/qr_scan_screen.dart';
 import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
 import 'package:ecommerse/custom_practice/snake_game/game.dart';
 import 'package:ecommerse/custom_practice/sy_expedition_travel_challenge/main_page.dart';
@@ -117,9 +120,24 @@ class RouteHandler {
           builder: (context) => const Drawer2dHomeScreen(),
         );
 
-      case AppRoute.TransitionRoute:
+      case AppRoute.transitionRoute:
         return MaterialPageRoute(
           builder: (context) => const TransitionHomeScreen(),
+        );
+
+      case AppRoute.qrhomescreenRoute:
+        return MaterialPageRoute(
+          builder: (context) => const QrHomeScreen(),
+        );
+
+      case AppRoute.qrcreatecreenRoute:
+        return MaterialPageRoute(
+          builder: (context) => const QrCodeCreatePage(),
+        );
+
+      case AppRoute.qrscancreenRoute:
+        return MaterialPageRoute(
+          builder: (context) => const QrCodeScanScreen(),
         );
 
       default:

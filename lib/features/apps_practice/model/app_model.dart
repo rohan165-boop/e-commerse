@@ -143,8 +143,16 @@ List<AppModel> appModel = [
     title: "Transition",
     press: () {
       Navigator.pushNamed(
-          AppSettings.navigatorKey.currentContext!, AppRoute.TransitionRoute);
+          AppSettings.navigatorKey.currentContext!, AppRoute.transitionRoute);
     },
     image: VerticalImage.v7,
+  ),
+  AppModel(
+    title: "Q R Screen",
+    press: () {
+      Navigator.pushNamed(
+          AppSettings.navigatorKey.currentContext!, AppRoute.qrhomescreenRoute);
+    },
+    image: VerticalImage.v9,
   ),
 ];
