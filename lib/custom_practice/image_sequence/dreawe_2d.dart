@@ -1,7 +1,10 @@
 import 'dart:math';
 
+import 'package:animations/animations.dart';
 import 'package:ecommerse/constants/app_colors.dart';
 import 'package:ecommerse/constants/image_constants.dart';
+import 'package:ecommerse/custom_practice/route_transition/firt_page.dart';
+import 'package:ecommerse/custom_practice/widget_transition/widget/custom_locations_widget2.dart';
 import 'package:flutter/material.dart';
 
 class Drawer2dHomeScreen extends StatefulWidget {
@@ -12,6 +15,8 @@ class Drawer2dHomeScreen extends StatefulWidget {
 }
 
 class _Drawer2dHomeScreenState extends State<Drawer2dHomeScreen> {
+  final ContainerTransitionType _containerTransitionType =
+      ContainerTransitionType.fade;
   double value = 0;
   @override
   Widget build(BuildContext context) {
@@ -136,8 +141,18 @@ class _Drawer2dHomeScreenState extends State<Drawer2dHomeScreen> {
                   appBar: AppBar(
                     title: const Text("3D Drawer"),
                   ),
-                  body: const Center(
-                    child: Text("Swipe right to open the menu"),
+                  body: Column(
+                    children: [
+                      const Text("Swipe right to open the menu"),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      OpenContainerWidget(
+                          containerTransitionType: _containerTransitionType),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
                   ),
                 ),
               );

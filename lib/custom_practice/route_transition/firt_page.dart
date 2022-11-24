@@ -20,20 +20,36 @@ class _FirstPageState extends State<FirstPage> {
         title: const Text("First page"),
       ),
       body: Center(
-        child: OpenContainer(
-          transitionType: _containerTransitionType,
-          transitionDuration: const Duration(seconds: 2),
-          closedElevation: 0,
-          closedShape: const RoundedRectangleBorder(
-              side: BorderSide(color: Colors.white, width: 1)),
-          closedColor: AppColors.appPink,
-          openBuilder: (BuildContext context, _) => const SecendPage(),
-          closedBuilder: (BuildContext context, _) => Container(
-            height: 100,
-            width: double.infinity,
-            color: AppColors.appPink,
-          ),
-        ),
+        child: OpenContainerWidget(
+            containerTransitionType: _containerTransitionType),
+      ),
+    );
+  }
+}
+
+class OpenContainerWidget extends StatelessWidget {
+  const OpenContainerWidget({
+    Key? key,
+    required ContainerTransitionType containerTransitionType,
+  })  : _containerTransitionType = containerTransitionType,
+        super(key: key);
+
+  final ContainerTransitionType _containerTransitionType;
+
+  @override
+  Widget build(BuildContext context) {
+    return OpenContainer(
+      transitionType: _containerTransitionType,
+      transitionDuration: const Duration(seconds: 2),
+      closedElevation: 0,
+      closedShape: const RoundedRectangleBorder(
+          side: BorderSide(color: Colors.white, width: 1)),
+      closedColor: AppColors.appPink,
+      openBuilder: (BuildContext context, _) => const SecendPage(),
+      closedBuilder: (BuildContext context, _) => Container(
+        height: 100,
+        width: double.infinity,
+        color: AppColors.appPink,
       ),
     );
   }
